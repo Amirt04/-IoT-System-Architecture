@@ -1,0 +1,41 @@
+name: lab2
+
+# [client: эмулированное устройство] --(tc netem: потери/задержка/полоса)--> [mosquitto + iperf3 server] --> [метрики]
+# Порты наружу не публикуются: весь эксперимент идёт внутри сети lab2-net,
+# поэтому стенды Lab 0 / Lab 1 можно не останавливать.
+
+services:
+  certs:
+    image: alpine/openssl
+    entrypoint: ["sh", "/certs/gen.sh"]
+    volumes:
+      - ./certs:/certs
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: lab2-mosquitto
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./certs:/certs:ro
+    depends_on:
+      certs:
+        condition: service_completed_successfully
+    networks: [lab2]
+
+  iperf:
+    build: ./server
+    container_name: lab2-iperf
+    networks: [lab2]
+
+  client:
+    build: ./client
+    container_name: lab2-client
+    cap_add: [NET_ADMIN]          # нужно для tc netem
+    volumes:
+      - ./results:/results
+    depends_on: [mosquitto, iperf]
+    networks: [lab2]
+
+networks:
+  lab2:
+    name: lab2-net

@@ -1,0 +1,29 @@
+NFR: {'mqtt_delivery_min_pct': 99.9, 'mqtt_p99_max_ms': 500, 'connect_p95_max_ms': 2000, 'throughput_min_mbit': 1.0}
+
+d01 RSSI -40.0 dBm: OK
+    [+] QoS1 delivery 100.00% >= 99.9
+    [+] QoS1 p99 6 ms <= 500
+    [+] connect p95 78 ms <= 2000
+    [+] throughput 47.69 Mbit/s >= 1.0
+d05 RSSI -61.0 dBm: OK
+    [+] QoS1 delivery 100.00% >= 99.9
+    [+] QoS1 p99 168 ms <= 500
+    [+] connect p95 205 ms <= 2000
+    [+] throughput 26.10 Mbit/s >= 1.0
+d10 RSSI -70.0 dBm: OK
+    [+] QoS1 delivery 100.00% >= 99.9
+    [+] QoS1 p99 234 ms <= 500
+    [+] connect p95 238 ms <= 2000
+    [+] throughput 7.46 Mbit/s >= 1.0
+d20 RSSI -79.0 dBm: FAIL
+    [+] QoS1 delivery 100.00% >= 99.9
+    [-] QoS1 p99 2100 ms <= 500
+    [+] connect p95 962 ms <= 2000
+    [+] throughput 1.31 Mbit/s >= 1.0
+d30 RSSI -84.3 dBm: FAIL
+    [+] QoS1 delivery 100.00% >= 99.9
+    [-] QoS1 p99 8261 ms <= 500
+    [+] connect p95 1507 ms <= 2000
+    [-] throughput 0.47 Mbit/s >= 1.0
+
+Система перестаёт удовлетворять NFR при RSSI <= -79.0 dBm (d20)

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iot-course.local/schema/telemetry/1.0",
+  "title": "Device telemetry message",
+  "description": "Сообщение уровня устройства (Lab 1). Обязательные: device_id, ts, seq, metrics, schema_version. Опциональные: battery, rssi, quality.",
+  "type": "object",
+  "required": ["device_id", "ts", "seq", "metrics", "schema_version"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^1\\.[0-9]+$" },
+    "device_id": { "type": "string", "pattern": "^[a-z0-9-]{3,32}$" },
+    "ts": {
+      "description": "device_ts: время измерения по часам устройства, UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time"
+    },
+    "seq": { "type": "integer", "minimum": 0 },
+    "metrics": {
+      "type": "object",
+      "required": ["temperature", "humidity", "pressure", "motion"],
+      "additionalProperties": false,
+      "properties": {
+        "temperature": { "type": ["number", "null"], "minimum": -40, "maximum": 85, "description": "°C" },
+        "humidity":    { "type": ["number", "null"], "minimum": 0, "maximum": 100, "description": "% RH" },
+        "pressure":    { "type": ["number", "null"], "minimum": 300, "maximum": 1100, "description": "hPa" },
+        "motion":      { "type": ["boolean", "null"], "description": "PIR" }
+      }
+    },
+    "quality": {
+      "description": "Флаги валидации по каналам; канал без флага = ok",
+      "type": "object",
+      "additionalProperties": { "enum": ["out_of_range", "nan", "stuck", "spike"] }
+    },
+    "battery": { "type": "number", "minimum": 0, "maximum": 100, "description": "%" },
+    "rssi": { "type": "integer", "minimum": -120, "maximum": 0, "description": "dBm" }
+  }
+}

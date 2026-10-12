@@ -1,0 +1,80 @@
+name: lab1
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: lab1-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/uptime", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [iot]
+
+  # Виртуальное устройство: 4 канала, JSON, кольцевой буфер 500
+  device:
+    build: ./device
+    container_name: lab1-device
+    environment:
+      MQTT_HOST: mosquitto
+      DEVICE_ID: env-node-01
+      SAMPLE_INTERVAL: "5"
+      ENCODING: json
+      BUFFER_SIZE: "500"
+      BUFFER_OVERFLOW: drop_oldest
+      DAY_SECONDS: "1800"        # ускоренные «сутки» = 30 мин, чтобы цикл был виден за время лабы
+      FAULTS: "true"             # редкие выбросы / NaN / залипание для проверки валидации
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [iot]
+
+  # То же устройство в формате CBOR (запуск: docker compose --profile cbor up -d)
+  device-cbor:
+    build: ./device
+    container_name: lab1-device-cbor
+    profiles: ["cbor"]
+    environment:
+      MQTT_HOST: mosquitto
+      DEVICE_ID: env-node-02
+      SAMPLE_INTERVAL: "5"
+      ENCODING: cbor
+      BUFFER_SIZE: "500"
+      DAY_SECONDS: "1800"
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [iot]
+
+  # Приёмная сторона: схема, seq, ingest_ts -> ./data
+  collector:
+    build: ./collector
+    container_name: lab1-collector
+    environment:
+      MQTT_HOST: mosquitto
+      SUMMARY_EVERY: "30"
+    volumes:
+      - ./schema:/schema:ro
+      - ./data:/data
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [iot]
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
+
+networks:
+  iot:
+    name: lab1-net

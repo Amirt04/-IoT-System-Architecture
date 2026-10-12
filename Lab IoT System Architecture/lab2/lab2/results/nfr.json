@@ -1,0 +1,6 @@
+{
+  "mqtt_delivery_min_pct": 99.9,
+  "mqtt_p99_max_ms": 500,
+  "connect_p95_max_ms": 2000,
+  "throughput_min_mbit": 1.0
+}

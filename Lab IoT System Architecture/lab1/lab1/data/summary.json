@@ -1,0 +1,19 @@
+{
+  "generated": "2026-10-12T09:46:30+00:00",
+  "received": 220,
+  "schema_invalid": 0,
+  "devices": {
+    "env-node-01": {
+      "seq_first": 0,
+      "seq_last": 72,
+      "expected": 73,
+      "unique_received": 73,
+      "missing": 0,
+      "missing_ranges": [],
+      "duplicates": 0,
+      "out_of_order": 0,
+      "loss_pct": 0.0
+    }
+  },
+  "avg_bytes_json": 198.9
+}

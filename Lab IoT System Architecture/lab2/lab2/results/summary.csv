@@ -1,0 +1,6 @@
+profile,distance_m,rssi_dbm,netem,series,throughput_mbit,tcp_retransmits,ping_loss_pct,jitter_ms,rtt_p99_ms_ci,mqtt_q0_loss_pct,mqtt_q1_loss_pct,mqtt_q1_duplicates
+d01,1,-40.0,"loss 0.0%, delay 2±1 ms, rate 50 Mbit/s",3,47.69 ± 0.14,0,0.0,0.7 ± 0.0,3.7 ± 0.6,0.00,0.00,0
+d05,5,-61.0,"loss 1.0%, delay 4±2 ms, rate 30 Mbit/s",3,26.10 ± 0.59,111 ± 25,1.2 ± 0.7,1.5 ± 0.6,6.7 ± 0.5,0.00,0.00,0
+d10,10,-70.0,"loss 3.0%, delay 8±4 ms, rate 15 Mbit/s",3,7.46 ± 1.31,103 ± 18,2.3 ± 3.8,2.7 ± 0.5,12.4 ± 0.1,0.00,0.00,0
+d20,20,-79.0,"loss 10.0%, delay 20±10 ms, rate 5 Mbit/s",3,1.31 ± 0.67,61 ± 7,9.8 ± 6.4,6.9 ± 1.7,30.6 ± 0.5,0.00,0.00,0
+d30,30,-84.3,"loss 20.0%, delay 40±20 ms, rate 2 Mbit/s",3,0.47 ± 0.33,51 ± 41,16.8 ± 6.3,13.9 ± 1.5,60.3 ± 1.1,0.00,0.00,0
