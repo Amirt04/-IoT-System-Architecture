@@ -1,0 +1,41 @@
+name: labs1
+
+# [N виртуальных end-devices] -> [коллизионная модель ALOHA] -> [gateway model]   (sim/network.py)
+#        |                                                          |
+# [энергетическая модель устройства] (sim/energy.py)        [Network Server: MQTT-мост] (sim/bridge.py)
+#        |                                                          |
+# [battery lifetime, графики] -> ./results                  [MQTT -> стенд курса: mosquitto:1883]
+
+services:
+  # Полный прогон симуляции: docker compose run --rm sim
+  sim:
+    build: ./sim
+    container_name: labs1-sim
+    environment:
+      RESULTS: /app/results
+    volumes:
+      - ./results:/app/results
+    profiles: ["sim"]
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: labs1-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+    networks: [lpwan]
+
+  # Воспроизведение сети в реальном времени -> MQTT (формат uplink ChirpStack v4)
+  bridge:
+    build: ./sim
+    container_name: labs1-bridge
+    command: ["python", "bridge.py", "--n", "100", "--sf", "7", "--period", "60", "--minutes", "30", "--speed", "10"]
+    environment:
+      MQTT_HOST: mosquitto
+    depends_on: [mosquitto]
+    networks: [lpwan]
+
+networks:
+  lpwan:
+    name: labs1-net

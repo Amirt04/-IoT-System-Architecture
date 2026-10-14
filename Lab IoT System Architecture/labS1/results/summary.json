@@ -1,0 +1,93 @@
+{
+  "seeds": 3,
+  "payload_bytes": 20,
+  "channels": 3,
+  "toa_ms": {
+    "7": 71.9,
+    "8": 133.6,
+    "9": 246.8,
+    "10": 452.6,
+    "11": 987.1,
+    "12": 1810.4
+  },
+  "aloha": {
+    "S_max_sim": 0.1852,
+    "G_at_max": 0.5,
+    "S_max_theory": 0.1839
+  },
+  "max_devices": [
+    {
+      "period_s": 300,
+      "sf": 7,
+      "toa_ms": 71.9,
+      "max_n_sim_capture": 406,
+      "max_n_analytic_no_capture": 320,
+      "per_device_duty_cycle_pct": 0.024
+    },
+    {
+      "period_s": 300,
+      "sf": 9,
+      "toa_ms": 246.8,
+      "max_n_sim_capture": 112,
+      "max_n_analytic_no_capture": 93,
+      "per_device_duty_cycle_pct": 0.082
+    },
+    {
+      "period_s": 300,
+      "sf": 12,
+      "toa_ms": 1810.4,
+      "max_n_sim_capture": 15,
+      "max_n_analytic_no_capture": 12,
+      "per_device_duty_cycle_pct": 0.603
+    },
+    {
+      "period_s": 900,
+      "sf": 7,
+      "toa_ms": 71.9,
+      "max_n_sim_capture": 1248,
+      "max_n_analytic_no_capture": 962,
+      "per_device_duty_cycle_pct": 0.008
+    },
+    {
+      "period_s": 900,
+      "sf": 9,
+      "toa_ms": 246.8,
+      "max_n_sim_capture": 328,
+      "max_n_analytic_no_capture": 280,
+      "per_device_duty_cycle_pct": 0.027
+    },
+    {
+      "period_s": 900,
+      "sf": 12,
+      "toa_ms": 1810.4,
+      "max_n_sim_capture": 52,
+      "max_n_analytic_no_capture": 38,
+      "per_device_duty_cycle_pct": 0.201
+    },
+    {
+      "period_s": 3600,
+      "sf": 7,
+      "toa_ms": 71.9,
+      "max_n_sim_capture": 4873,
+      "max_n_analytic_no_capture": 3850,
+      "per_device_duty_cycle_pct": 0.002
+    },
+    {
+      "period_s": 3600,
+      "sf": 9,
+      "toa_ms": 246.8,
+      "max_n_sim_capture": 1403,
+      "max_n_analytic_no_capture": 1122,
+      "per_device_duty_cycle_pct": 0.007
+    },
+    {
+      "period_s": 3600,
+      "sf": 12,
+      "toa_ms": 1810.4,
+      "max_n_sim_capture": 169,
+      "max_n_analytic_no_capture": 152,
+      "per_device_duty_cycle_pct": 0.05
+    }
+  ],
+  "elapsed_s": 27.9
+}
