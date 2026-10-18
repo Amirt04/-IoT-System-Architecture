@@ -1,0 +1,43 @@
+{
+  "filters": {
+    "iot/v1/#": 190,
+    "iot/v1/+/+/telemetry/temperature": 45,
+    "iot/v1/astana/+/telemetry/+": 120
+  },
+  "topics": {
+    "iot/v1/astana/dev-001/status": 2,
+    "iot/v1/astana/dev-003/status": 2,
+    "iot/v1/astana/dev-lwt-a-k10/status": 1,
+    "iot/v1/astana/dev-lwt-b-k5/status": 1,
+    "iot/v1/astana/dev-lwt-b-k10/status": 1,
+    "iot/v1/astana/dev-lwt-b-k20/status": 1,
+    "iot/v1/almaty/dev-002/status": 2,
+    "iot/v1/astana/dev-001/telemetry/temperature": 15,
+    "iot/v1/astana/dev-001/telemetry/humidity": 15,
+    "iot/v1/astana/dev-001/telemetry/pressure": 15,
+    "iot/v1/astana/dev-001/telemetry/motion": 15,
+    "iot/v1/almaty/dev-002/telemetry/temperature": 15,
+    "iot/v1/almaty/dev-002/telemetry/humidity": 15,
+    "iot/v1/almaty/dev-002/telemetry/pressure": 15,
+    "iot/v1/almaty/dev-002/telemetry/motion": 15,
+    "iot/v1/astana/dev-003/telemetry/temperature": 15,
+    "iot/v1/astana/dev-003/telemetry/humidity": 15,
+    "iot/v1/astana/dev-003/telemetry/pressure": 15,
+    "iot/v1/astana/dev-003/telemetry/motion": 15
+  },
+  "missing": {
+    "iot/v1/astana/dev-001/telemetry/temperature": 0,
+    "iot/v1/astana/dev-001/telemetry/humidity": 0,
+    "iot/v1/astana/dev-001/telemetry/pressure": 0,
+    "iot/v1/astana/dev-001/telemetry/motion": 0,
+    "iot/v1/almaty/dev-002/telemetry/temperature": 0,
+    "iot/v1/almaty/dev-002/telemetry/humidity": 0,
+    "iot/v1/almaty/dev-002/telemetry/pressure": 0,
+    "iot/v1/almaty/dev-002/telemetry/motion": 0,
+    "iot/v1/astana/dev-003/telemetry/temperature": 0,
+    "iot/v1/astana/dev-003/telemetry/humidity": 0,
+    "iot/v1/astana/dev-003/telemetry/pressure": 0,
+    "iot/v1/astana/dev-003/telemetry/motion": 0
+  },
+  "duplicates": {}
+}

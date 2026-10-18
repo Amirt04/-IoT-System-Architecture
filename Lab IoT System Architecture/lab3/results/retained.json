@@ -1,0 +1,36 @@
+[
+  {
+    "step": "подписка после публикации",
+    "received": [
+      {
+        "topic": "iot/v1/astana/dev-001/config",
+        "payload": "{\"interval_s\": 5, \"fw\": \"1.4.2\", \"ver\": 7}",
+        "retain": true,
+        "after_connect_ms": 47.0
+      },
+      {
+        "topic": "iot/v1/astana/dev-001/status",
+        "payload": "online",
+        "retain": true,
+        "after_connect_ms": 47.2
+      }
+    ]
+  },
+  {
+    "step": "активная подписка (первое — retained из хранилища, второе — живое)",
+    "received": [
+      {
+        "payload": "{\"interval_s\": 5, \"fw\": \"1.4.2\", \"ver\": 7}",
+        "retain": true
+      },
+      {
+        "payload": "{\"interval_s\": 10, \"fw\": \"1.4.3\", \"ver\": 8}",
+        "retain": false
+      }
+    ]
+  },
+  {
+    "step": "после удаления retained (пустой payload)",
+    "received": []
+  }
+]

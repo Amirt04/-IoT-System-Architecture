@@ -1,0 +1,30 @@
+[
+  {
+    "case": "a-k10",
+    "scenario": "kill -9, сеть работает",
+    "keepalive_s": 10,
+    "limit_1_5k_s": 15.0,
+    "lwt_delay_s": 0.003
+  },
+  {
+    "case": "b-k5",
+    "scenario": "глухой обрыв + kill -9",
+    "keepalive_s": 5,
+    "limit_1_5k_s": 7.5,
+    "lwt_delay_s": 5.27
+  },
+  {
+    "case": "b-k10",
+    "scenario": "глухой обрыв + kill -9",
+    "keepalive_s": 10,
+    "limit_1_5k_s": 15.0,
+    "lwt_delay_s": 11.366
+  },
+  {
+    "case": "b-k20",
+    "scenario": "глухой обрыв + kill -9",
+    "keepalive_s": 20,
+    "limit_1_5k_s": 30.0,
+    "lwt_delay_s": 22.379
+  }
+]

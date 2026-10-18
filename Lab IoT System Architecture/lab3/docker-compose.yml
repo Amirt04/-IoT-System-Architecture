@@ -1,0 +1,51 @@
+name: lab3
+
+# [publisher × N] ──► [mosquitto] ──► [subscriber: wildcard]          (контейнер lab3-client)
+#                         │
+#                [lab3-netem: tc netem + tcpdump -> ./captures/*.pcap -> Wireshark]
+#
+# Потери задаются с обеих сторон: tc netem на eth0 клиента (устройства -> брокер)
+# и на eth0 брокера (брокер -> устройства, т.е. PUBACK/доставка) — агент lab3-netem.
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: lab3-mosquitto
+    ports:
+      - "1883:1883"            # для MQTT Explorer с хоста
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - mosquitto_data:/mosquitto/data
+    networks: [lab3]
+
+  # Агент в сетевом пространстве брокера: netem на стороне брокера и захват трафика
+  netem:
+    build: ./agent
+    container_name: lab3-netem
+    network_mode: "service:mosquitto"
+    cap_add: [NET_ADMIN, NET_RAW]
+    volumes:
+      - ./captures:/captures
+    depends_on: [mosquitto]
+    restart: unless-stopped
+
+  # Устройства и подписчики; все эксперименты запускаются здесь через docker exec
+  client:
+    build: ./client
+    container_name: lab3-client
+    cap_add: [NET_ADMIN]
+    environment:
+      BROKER: mosquitto
+      NETEM_BACKEND: tc
+    volumes:
+      - ./results:/results
+      - ./captures:/captures
+    depends_on: [mosquitto, netem]
+    networks: [lab3]
+
+volumes:
+  mosquitto_data:
+
+networks:
+  lab3:
+    name: lab3-net
