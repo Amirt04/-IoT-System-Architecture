@@ -1,0 +1,25 @@
+# ACL брокера A. Схема топиков (Lab 3): iot/v1/<site>/<device>/{telemetry/<metric>|status|config|cmd/<name>}
+# Принцип наименьших привилегий: всё, что не разрешено явно, запрещено.
+
+# --- устройство: пишет только свою телеметрию и статус, читает только свои команды и конфиг
+user device01
+topic write iot/v1/astana/device01/telemetry/#
+topic write iot/v1/astana/device01/status
+topic read  iot/v1/astana/device01/cmd/#
+topic read  iot/v1/astana/device01/config
+
+# --- шлюз площадки astana: полный доступ к своей площадке + тестовый топик моста
+user gateway01
+topic readwrite iot/v1/astana/#
+topic readwrite bridge/test/#
+
+# --- сервис приёма данных: читает телеметрию и статусы всех площадок, отправляет команды
+user svc-ingest
+topic read  iot/v1/+/+/telemetry/#
+topic read  iot/v1/+/+/status
+topic write iot/v1/+/+/cmd/#
+
+# --- дашборд: только чтение данных и метрик брокера
+user dashboard
+topic read iot/v1/#
+topic read $SYS/#

@@ -1,0 +1,208 @@
+{
+  "rows": [
+    {
+      "metric": "version",
+      "topic": "$SYS/broker/version",
+      "idle": "mosquitto version 2.0.22",
+      "load": "mosquitto version 2.0.22"
+    },
+    {
+      "metric": "uptime",
+      "topic": "$SYS/broker/uptime",
+      "idle": "114 seconds",
+      "load": "132 seconds"
+    },
+    {
+      "metric": "clients/connected",
+      "topic": "$SYS/broker/clients/connected",
+      "idle": "2",
+      "load": "8"
+    },
+    {
+      "metric": "clients/disconnected",
+      "topic": "$SYS/broker/clients/disconnected",
+      "idle": "2",
+      "load": "2"
+    },
+    {
+      "metric": "clients/maximum",
+      "topic": "$SYS/broker/clients/maximum",
+      "idle": "6",
+      "load": "10"
+    },
+    {
+      "metric": "subscriptions/count",
+      "topic": "$SYS/broker/subscriptions/count",
+      "idle": "6",
+      "load": "7"
+    },
+    {
+      "metric": "retained messages/count",
+      "topic": "$SYS/broker/retained messages/count",
+      "idle": "52",
+      "load": "52"
+    },
+    {
+      "metric": "store/messages/count",
+      "topic": "$SYS/broker/store/messages/count",
+      "idle": "53",
+      "load": "53"
+    },
+    {
+      "metric": "messages/received",
+      "topic": "$SYS/broker/messages/received",
+      "idle": "986",
+      "load": "3665"
+    },
+    {
+      "metric": "messages/sent",
+      "topic": "$SYS/broker/messages/sent",
+      "idle": "1082",
+      "load": "6519"
+    },
+    {
+      "metric": "publish/messages/dropped",
+      "topic": "$SYS/broker/publish/messages/dropped",
+      "idle": "200",
+      "load": "200"
+    },
+    {
+      "metric": "load/messages/received/1min",
+      "topic": "$SYS/broker/load/messages/received/1min",
+      "idle": "315.03",
+      "load": "2613.92"
+    },
+    {
+      "metric": "load/messages/sent/1min",
+      "topic": "$SYS/broker/load/messages/sent/1min",
+      "idle": "369.76",
+      "load": "5083.45"
+    },
+    {
+      "metric": "load/bytes/received/1min",
+      "topic": "$SYS/broker/load/bytes/received/1min",
+      "idle": "9137.85",
+      "load": "129999.79"
+    },
+    {
+      "metric": "load/connections/1min",
+      "topic": "$SYS/broker/load/connections/1min",
+      "idle": "5.74",
+      "load": "9.88"
+    },
+    {
+      "metric": "bridge state",
+      "topic": "$SYS/broker/connection/bridge-a-to-b/state",
+      "idle": "1",
+      "load": "1"
+    }
+  ],
+  "all_idle": {
+    "$SYS/broker/version": "mosquitto version 2.0.22",
+    "$SYS/broker/connection/bridge-a-to-b/state": "1",
+    "$SYS/broker/uptime": "114 seconds",
+    "$SYS/broker/clients/total": "4",
+    "$SYS/broker/clients/maximum": "6",
+    "$SYS/broker/clients/inactive": "2",
+    "$SYS/broker/clients/disconnected": "2",
+    "$SYS/broker/clients/active": "2",
+    "$SYS/broker/clients/connected": "2",
+    "$SYS/broker/clients/expired": "0",
+    "$SYS/broker/load/messages/received/1min": "315.03",
+    "$SYS/broker/load/messages/received/5min": "156.04",
+    "$SYS/broker/load/messages/received/15min": "60.78",
+    "$SYS/broker/load/messages/sent/1min": "369.76",
+    "$SYS/broker/load/messages/sent/5min": "168.70",
+    "$SYS/broker/load/messages/sent/15min": "65.16",
+    "$SYS/broker/load/publish/dropped/1min": "63.35",
+    "$SYS/broker/load/publish/dropped/5min": "31.78",
+    "$SYS/broker/load/publish/dropped/15min": "12.35",
+    "$SYS/broker/load/publish/received/1min": "123.56",
+    "$SYS/broker/load/publish/received/5min": "61.29",
+    "$SYS/broker/load/publish/received/15min": "23.82",
+    "$SYS/broker/load/publish/sent/1min": "235.10",
+    "$SYS/broker/load/publish/sent/5min": "102.62",
+    "$SYS/broker/load/publish/sent/15min": "39.48",
+    "$SYS/broker/load/bytes/received/1min": "9137.85",
+    "$SYS/broker/load/bytes/received/5min": "4538.20",
+    "$SYS/broker/load/bytes/received/15min": "1767.26",
+    "$SYS/broker/load/bytes/sent/1min": "13962.46",
+    "$SYS/broker/load/bytes/sent/5min": "6340.77",
+    "$SYS/broker/load/bytes/sent/15min": "2451.33",
+    "$SYS/broker/load/sockets/1min": "5.90",
+    "$SYS/broker/load/sockets/5min": "2.56",
+    "$SYS/broker/load/sockets/15min": "0.99",
+    "$SYS/broker/load/connections/1min": "5.74",
+    "$SYS/broker/load/connections/5min": "2.42",
+    "$SYS/broker/load/connections/15min": "0.93",
+    "$SYS/broker/messages/stored": "53",
+    "$SYS/broker/messages/received": "986",
+    "$SYS/broker/messages/sent": "1082",
+    "$SYS/broker/store/messages/count": "53",
+    "$SYS/broker/store/messages/bytes": "237",
+    "$SYS/broker/subscriptions/count": "6",
+    "$SYS/broker/shared_subscriptions/count": "0",
+    "$SYS/broker/retained messages/count": "52",
+    "$SYS/broker/publish/messages/dropped": "200",
+    "$SYS/broker/publish/messages/received": "386",
+    "$SYS/broker/publish/messages/sent": "667",
+    "$SYS/broker/publish/bytes/received": "7443",
+    "$SYS/broker/publish/bytes/sent": "9351",
+    "$SYS/broker/bytes/received": "28663",
+    "$SYS/broker/bytes/sent": "41027"
+  },
+  "all_load": {
+    "$SYS/broker/version": "mosquitto version 2.0.22",
+    "$SYS/broker/connection/bridge-a-to-b/state": "1",
+    "$SYS/broker/uptime": "132 seconds",
+    "$SYS/broker/clients/total": "10",
+    "$SYS/broker/clients/maximum": "10",
+    "$SYS/broker/clients/inactive": "2",
+    "$SYS/broker/clients/disconnected": "2",
+    "$SYS/broker/clients/active": "8",
+    "$SYS/broker/clients/connected": "8",
+    "$SYS/broker/clients/expired": "0",
+    "$SYS/broker/load/messages/received/1min": "2613.92",
+    "$SYS/broker/load/messages/received/5min": "670.01",
+    "$SYS/broker/load/messages/received/15min": "236.74",
+    "$SYS/broker/load/messages/sent/1min": "5083.45",
+    "$SYS/broker/load/messages/sent/5min": "1214.93",
+    "$SYS/broker/load/messages/sent/15min": "421.53",
+    "$SYS/broker/load/publish/dropped/1min": "46.93",
+    "$SYS/broker/load/publish/dropped/5min": "29.93",
+    "$SYS/broker/load/publish/dropped/15min": "12.10",
+    "$SYS/broker/load/publish/received/1min": "2463.16",
+    "$SYS/broker/load/publish/received/5min": "578.67",
+    "$SYS/broker/load/publish/received/15min": "199.80",
+    "$SYS/broker/load/publish/sent/1min": "4974.78",
+    "$SYS/broker/load/publish/sent/5min": "1150.59",
+    "$SYS/broker/load/publish/sent/15min": "395.64",
+    "$SYS/broker/load/bytes/received/1min": "129999.79",
+    "$SYS/broker/load/bytes/received/5min": "31340.19",
+    "$SYS/broker/load/bytes/received/15min": "10899.48",
+    "$SYS/broker/load/bytes/sent/1min": "256066.26",
+    "$SYS/broker/load/bytes/sent/5min": "59906.64",
+    "$SYS/broker/load/bytes/sent/15min": "20668.33",
+    "$SYS/broker/load/sockets/1min": "10.00",
+    "$SYS/broker/load/sockets/5min": "3.75",
+    "$SYS/broker/load/sockets/15min": "1.43",
+    "$SYS/broker/load/connections/1min": "9.88",
+    "$SYS/broker/load/connections/5min": "3.62",
+    "$SYS/broker/load/connections/15min": "1.37",
+    "$SYS/broker/messages/stored": "53",
+    "$SYS/broker/messages/received": "3665",
+    "$SYS/broker/messages/sent": "6519",
+    "$SYS/broker/store/messages/count": "53",
+    "$SYS/broker/store/messages/bytes": "266",
+    "$SYS/broker/subscriptions/count": "7",
+    "$SYS/broker/shared_subscriptions/count": "0",
+    "$SYS/broker/retained messages/count": "52",
+    "$SYS/broker/publish/messages/dropped": "200",
+    "$SYS/broker/publish/messages/received": "3054",
+    "$SYS/broker/publish/messages/sent": "6095",
+    "$SYS/broker/publish/bytes/received": "33573",
+    "$SYS/broker/publish/bytes/sent": "62091",
+    "$SYS/broker/bytes/received": "167278",
+    "$SYS/broker/bytes/sent": "318653"
+  }
+}

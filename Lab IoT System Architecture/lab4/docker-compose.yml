@@ -1,0 +1,98 @@
+name: lab4
+
+# [devices] ──► [mosquitto A] ══bridge══► [mosquitto B]         [EMQX node1 ⇄ node2] (кластер)
+#                  │ persistence, ACL, limits
+#                  └─────── metrics ($SYS) ───────┘
+
+services:
+  # Однократно: password_file из config/users.txt (mosquitto_passwd) + ACL с правами 0600 в томе secrets
+  init-secrets:
+    image: eclipse-mosquitto:2.0.22
+    entrypoint: ["sh", "/config/init-secrets.sh"]
+    volumes:
+      - ./config:/config:ro
+      - secrets:/mosquitto/secrets
+
+  broker-a:
+    image: eclipse-mosquitto:2.0.22
+    container_name: lab4-broker-a
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./config/broker-a.conf:/mosquitto/config/mosquitto.conf:ro
+      - secrets:/mosquitto/secrets:ro
+      - data_a:/mosquitto/data
+    depends_on:
+      init-secrets:
+        condition: service_completed_successfully
+      broker-b:
+        condition: service_started
+    networks: [lab4]
+
+  broker-b:
+    image: eclipse-mosquitto:2.0.22
+    container_name: lab4-broker-b
+    ports:
+      - "1884:1883"
+    volumes:
+      - ./config/broker-b.conf:/mosquitto/config/mosquitto.conf:ro
+      - secrets:/mosquitto/secrets:ro
+      - data_b:/mosquitto/data
+    depends_on:
+      init-secrets:
+        condition: service_completed_successfully
+    networks: [lab4]
+
+  # EMQX 5.8.9 — последняя версия под Apache 2.0 (с 5.9 кластер требует лицензию)
+  emqx1:
+    image: emqx/emqx:5.8.9
+    container_name: lab4-emqx1
+    hostname: node1.emqx.io
+    environment:
+      EMQX_NODE__NAME: emqx@node1.emqx.io
+      EMQX_CLUSTER__DISCOVERY_STRATEGY: static
+      EMQX_CLUSTER__STATIC__SEEDS: "[emqx@node1.emqx.io,emqx@node2.emqx.io]"
+    ports:
+      - "1885:1883"
+      - "18083:18083"      # дашборд: http://localhost:18083  (admin / public)
+    networks:
+      lab4:
+        aliases: [node1.emqx.io]
+
+  emqx2:
+    image: emqx/emqx:5.8.9
+    container_name: lab4-emqx2
+    hostname: node2.emqx.io
+    environment:
+      EMQX_NODE__NAME: emqx@node2.emqx.io
+      EMQX_CLUSTER__DISCOVERY_STRATEGY: static
+      EMQX_CLUSTER__STATIC__SEEDS: "[emqx@node1.emqx.io,emqx@node2.emqx.io]"
+    networks:
+      lab4:
+        aliases: [node2.emqx.io]
+
+  client:
+    build: ./client
+    container_name: lab4-client
+    environment:
+      BROKER_A: broker-a
+      BROKER_B: broker-b
+      EMQX1: emqx1
+      EMQX2: emqx2
+      EMQX_API: emqx1:18083
+    volumes:
+      - ./config:/config:ro
+      - ./results:/results
+      # доступ к Docker API: проверка 3 сама перезапускает брокер A, проверка 4 читает его лог
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on: [broker-a, broker-b, emqx1, emqx2]
+    networks: [lab4]
+
+volumes:
+  secrets:
+  data_a:
+  data_b:
+
+networks:
+  lab4:
+    name: lab4-net

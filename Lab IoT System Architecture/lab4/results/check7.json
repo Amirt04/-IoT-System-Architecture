@@ -1,0 +1,78 @@
+{
+  "check": 7,
+  "title": "EMQX: кластер, дашборд, сравнение с Mosquitto",
+  "rows": [
+    {
+      "action": "REST API: узлы кластера (GET /api/v5/nodes)",
+      "expected": "2 узла в статусе running",
+      "actual": "emqx@node1.emqx.io=running, emqx@node2.emqx.io=running",
+      "pass": true
+    },
+    {
+      "action": "публикация на узле emqx1 -> подписчик на узле emqx2",
+      "expected": "50 из 50 (маршрутизация внутри кластера)",
+      "actual": "50 из 50, задержка средн. 2.3 мс",
+      "pass": true
+    },
+    {
+      "action": "EMQX по умолчанию: payload 2000 Б",
+      "expected": "принимается (лимит по умолчанию 1 МБ)",
+      "actual": "PUBACK No matching subscribers",
+      "pass": true
+    }
+  ],
+  "passed": 3,
+  "total": 3,
+  "extra": {
+    "nodes": [
+      {
+        "node": "emqx@node1.emqx.io",
+        "version": "5.8.9",
+        "otp_release": "26.2.5.14-1/14.2.5.11",
+        "load1": 0.01,
+        "uptime": 400192,
+        "role": "core",
+        "memory_used": "1.28G",
+        "memory_total": "7.56G",
+        "node_status": "running",
+        "edition": "Opensource",
+        "max_fds": 1048576,
+        "connections": 0,
+        "load15": 0.14,
+        "load5": 0.19,
+        "cluster_sessions": 0,
+        "live_connections": 0,
+        "log_path": "log.file.enable is false, not logging to file.",
+        "process_available": 2097152,
+        "process_used": 677,
+        "sys_path": "/opt/emqx"
+      },
+      {
+        "node": "emqx@node2.emqx.io",
+        "version": "5.8.9",
+        "otp_release": "26.2.5.14-1/14.2.5.11",
+        "load1": 0.01,
+        "uptime": 400956,
+        "role": "core",
+        "memory_used": "1.28G",
+        "memory_total": "7.56G",
+        "node_status": "running",
+        "edition": "Opensource",
+        "max_fds": 1048576,
+        "connections": 0,
+        "load15": 0.14,
+        "load5": 0.19,
+        "cluster_sessions": 0,
+        "live_connections": 0,
+        "log_path": "log.file.enable is false, not logging to file.",
+        "process_available": 2097152,
+        "process_used": 675,
+        "sys_path": "/opt/emqx"
+      }
+    ],
+    "cross_node_latency_ms": 2.3,
+    "subscribe": [
+      "Granted QoS 1"
+    ]
+  }
+}

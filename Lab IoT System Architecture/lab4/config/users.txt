@@ -1,0 +1,10 @@
+# Пользователи брокеров (логин:пароль). Учебный стенд: в production пароли не хранят в git,
+# а передают через секреты (Docker secrets / Vault) и генерируют password_file при деплое.
+# broker A
+A:device01:Dev01-Pass!
+A:gateway01:Gw01-Pass!
+A:svc-ingest:Ingest-Pass!
+A:dashboard:Dash-Pass!
+# broker B (принимающая сторона моста)
+B:bridge-a:Bridge-Pass!
+B:viewer:Viewer-Pass!

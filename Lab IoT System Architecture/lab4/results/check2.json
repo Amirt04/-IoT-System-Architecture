@@ -1,0 +1,75 @@
+{
+  "check": 2,
+  "title": "ACL: разграничение доступа к топикам",
+  "rows": [
+    {
+      "action": "device01 -> свой топик telemetry",
+      "expected": "PUBACK Success, доставлено",
+      "actual": "PUBACK Success, доставлено 1",
+      "pass": true
+    },
+    {
+      "action": "device01 -> чужой топик device02 (MQTT 5)",
+      "expected": "PUBACK Not authorized, не доставлено",
+      "actual": "PUBACK Not authorized, доставлено 0",
+      "pass": true
+    },
+    {
+      "action": "device01 -> чужой топик (MQTT 3.1.1)",
+      "expected": "не доставлено; клиент получает обычный PUBACK",
+      "actual": "PUBACK Success, доставлено 0",
+      "pass": true
+    },
+    {
+      "action": "device01 -> свой id на чужой площадке almaty",
+      "expected": "Not authorized",
+      "actual": "PUBACK Not authorized, доставлено 0",
+      "pass": true
+    },
+    {
+      "action": "device01 публикует команду себе (cmd — только чтение)",
+      "expected": "Not authorized",
+      "actual": "PUBACK Not authorized",
+      "pass": true
+    },
+    {
+      "action": "device01 подписан на iot/v1/#, публикуются чужие данные",
+      "expected": "чужие сообщения не доставлены (SUBACK может быть Granted)",
+      "actual": "SUBACK ['Granted QoS 1'], получено чужих 0",
+      "pass": true
+    },
+    {
+      "action": "device01 подписывается на свои команды",
+      "expected": "SUBACK Granted QoS 1",
+      "actual": "SUBACK ['Granted QoS 1']",
+      "pass": true
+    },
+    {
+      "action": "svc-ingest отправляет команду device01",
+      "expected": "Success, устройство получило",
+      "actual": "PUBACK Success, получено 1",
+      "pass": true
+    },
+    {
+      "action": "dashboard пытается публиковать (только чтение)",
+      "expected": "Not authorized",
+      "actual": "PUBACK Not authorized",
+      "pass": true
+    },
+    {
+      "action": "dashboard читает $SYS",
+      "expected": "метрики приходят",
+      "actual": "получено 91 метрик",
+      "pass": true
+    },
+    {
+      "action": "svc-ingest читает $SYS (не разрешено)",
+      "expected": "0 метрик",
+      "actual": "получено 0",
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "total": 11,
+  "extra": {}
+}

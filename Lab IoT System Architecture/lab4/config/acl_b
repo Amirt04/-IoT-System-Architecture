@@ -1,0 +1,10 @@
+# ACL брокера B (облачная сторона моста)
+user bridge-a
+topic readwrite iot/v1/#
+topic readwrite bridge/test/#
+
+user viewer
+topic read  #
+topic read  $SYS/#
+topic write iot/v1/+/+/cmd/#
+topic write bridge/test/#

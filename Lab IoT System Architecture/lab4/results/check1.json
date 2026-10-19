@@ -1,0 +1,57 @@
+{
+  "check": 1,
+  "title": "Аутентификация (password_file)",
+  "rows": [
+    {
+      "action": "анонимное подключение (MQTT 3.1.1)",
+      "expected": "отказ",
+      "actual": "Not authorized",
+      "pass": true
+    },
+    {
+      "action": "анонимное подключение (MQTT 5)",
+      "expected": "отказ: Not authorized / Bad user name or password",
+      "actual": "Not authorized",
+      "pass": true
+    },
+    {
+      "action": "device01 с неверным паролем",
+      "expected": "отказ",
+      "actual": "Not authorized",
+      "pass": true
+    },
+    {
+      "action": "несуществующий пользователь hacker",
+      "expected": "отказ",
+      "actual": "Not authorized",
+      "pass": true
+    },
+    {
+      "action": "device01 с верным паролем",
+      "expected": "Success",
+      "actual": "Success",
+      "pass": true
+    },
+    {
+      "action": "gateway01 с верным паролем",
+      "expected": "Success",
+      "actual": "Success",
+      "pass": true
+    },
+    {
+      "action": "svc-ingest с верным паролем",
+      "expected": "Success",
+      "actual": "Success",
+      "pass": true
+    },
+    {
+      "action": "dashboard с верным паролем",
+      "expected": "Success",
+      "actual": "Success",
+      "pass": true
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "extra": {}
+}

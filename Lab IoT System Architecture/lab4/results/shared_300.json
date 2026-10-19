@@ -1,0 +1,38 @@
+{
+  "EMQX": {
+    "shared": [
+      1000,
+      1000,
+      1000
+    ],
+    "plain": [
+      3000,
+      3000,
+      3000
+    ],
+    "shared_unique": 3000,
+    "shared_total": 3000,
+    "seconds": 11.5,
+    "max_deviation_pct": 0.0,
+    "cv_pct": 0.0,
+    "rate": 300
+  },
+  "Mosquitto": {
+    "shared": [
+      1000,
+      1000,
+      1000
+    ],
+    "plain": [
+      3000,
+      3000,
+      3000
+    ],
+    "shared_unique": 3000,
+    "shared_total": 3000,
+    "seconds": 11.5,
+    "max_deviation_pct": 0.0,
+    "cv_pct": 0.0,
+    "rate": 300
+  }
+}

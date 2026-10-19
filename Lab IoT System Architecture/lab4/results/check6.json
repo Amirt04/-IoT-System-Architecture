@@ -1,0 +1,33 @@
+{
+  "check": 6,
+  "title": "Метрики $SYS",
+  "rows": [
+    {
+      "action": "число метрик в $SYS/#",
+      "expected": "> 40 топиков",
+      "actual": "52",
+      "pass": true
+    },
+    {
+      "action": "clients/connected растёт под нагрузкой",
+      "expected": "+6 клиентов (5 нагрузка + приёмник)",
+      "actual": "2 -> 8",
+      "pass": true
+    },
+    {
+      "action": "load/messages/received/1min растёт",
+      "expected": "заметный рост (скользящее среднее за 1 мин)",
+      "actual": "315.0 -> 2613.9",
+      "pass": true
+    },
+    {
+      "action": "состояние моста видно в $SYS",
+      "expected": "1",
+      "actual": "1",
+      "pass": true
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "extra": {}
+}

@@ -1,0 +1,70 @@
+{
+  "check": 8,
+  "title": "MQTT 5 shared subscriptions: распределение нагрузки (300 сообщ./с)",
+  "rows": [
+    {
+      "action": "EMQX: 3 consumer'а $share/g1, 3000 сообщений",
+      "expected": "сумма 3000, каждому ≈1000, без дублей",
+      "actual": "[1000, 1000, 1000] -> сумма 3000, уникальных 3000, отклонение до 0.0 %",
+      "pass": true
+    },
+    {
+      "action": "EMQX: 3 обычных подписчика на тот же фильтр",
+      "expected": "каждый получает все 3000",
+      "actual": "[3000, 3000, 3000]",
+      "pass": true
+    },
+    {
+      "action": "Mosquitto: 3 consumer'а $share/g1, 3000 сообщений",
+      "expected": "сумма 3000, каждому ≈1000, без дублей",
+      "actual": "[1000, 1000, 1000] -> сумма 3000, уникальных 3000, отклонение до 0.0 %",
+      "pass": true
+    },
+    {
+      "action": "Mosquitto: 3 обычных подписчика на тот же фильтр",
+      "expected": "каждый получает все 3000",
+      "actual": "[3000, 3000, 3000]",
+      "pass": true
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "extra": {
+    "EMQX": {
+      "shared": [
+        1000,
+        1000,
+        1000
+      ],
+      "plain": [
+        3000,
+        3000,
+        3000
+      ],
+      "shared_unique": 3000,
+      "shared_total": 3000,
+      "seconds": 11.5,
+      "max_deviation_pct": 0.0,
+      "cv_pct": 0.0,
+      "rate": 300
+    },
+    "Mosquitto": {
+      "shared": [
+        1000,
+        1000,
+        1000
+      ],
+      "plain": [
+        3000,
+        3000,
+        3000
+      ],
+      "shared_unique": 3000,
+      "shared_total": 3000,
+      "seconds": 11.5,
+      "max_deviation_pct": 0.0,
+      "cv_pct": 0.0,
+      "rate": 300
+    }
+  }
+}

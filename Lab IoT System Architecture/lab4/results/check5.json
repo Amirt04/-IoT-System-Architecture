@@ -1,0 +1,47 @@
+{
+  "check": 5,
+  "title": "Bridge между брокерами A и B",
+  "rows": [
+    {
+      "action": "состояние моста ($SYS/broker/connection/<id>/state)",
+      "expected": "1 (подключён)",
+      "actual": "1",
+      "pass": true
+    },
+    {
+      "action": "телеметрия device01 на A -> брокер B",
+      "expected": "20 из 20",
+      "actual": "20 из 20, задержка моста средн. 2.7 мс",
+      "pass": true
+    },
+    {
+      "action": "команда, опубликованная на B -> брокер A",
+      "expected": "1 сообщение",
+      "actual": "1",
+      "pass": true
+    },
+    {
+      "action": "команда, опубликованная на A, в брокер B (направление in only)",
+      "expected": "0 — не передаётся",
+      "actual": "0",
+      "pass": true
+    },
+    {
+      "action": "ping с A по both-топику: копий на A / на B за 3 с",
+      "expected": "1 / 1 — эхо не возвращается",
+      "actual": "1 / 1",
+      "pass": true
+    },
+    {
+      "action": "pong с B по both-топику: копий на A / на B за 3 с",
+      "expected": "1 / 1 — петли нет",
+      "actual": "1 / 1",
+      "pass": true
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "extra": {
+    "bridge_latency_ms": 2.68
+  }
+}

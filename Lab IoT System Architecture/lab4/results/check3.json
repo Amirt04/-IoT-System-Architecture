@@ -1,0 +1,35 @@
+{
+  "check": 3,
+  "title": "Persistence: сессия и очередь после рестарта брокера",
+  "rows": [
+    {
+      "action": "device01 публикует 50 сообщений QoS 1, пока подписчик офлайн",
+      "expected": "50 × PUBACK Success",
+      "actual": "50 × Success",
+      "pass": true
+    },
+    {
+      "action": "переподключение с тем же client id после рестарта",
+      "expected": "Session Present = 1",
+      "actual": "Session Present = 1",
+      "pass": true
+    },
+    {
+      "action": "сообщения из очереди persistent-сессии",
+      "expected": "получено 50/50, seq 0..49",
+      "actual": "получено 50/50, seq 0..49",
+      "pass": true
+    },
+    {
+      "action": "контроль: клиент с Clean Start после рестарта",
+      "expected": "Session Present = 0, 0 сообщений",
+      "actual": "Session Present = 0, 0 сообщений",
+      "pass": true
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "extra": {
+    "restart_seconds": 3.1
+  }
+}

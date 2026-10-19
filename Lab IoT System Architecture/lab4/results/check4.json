@@ -1,0 +1,49 @@
+{
+  "check": 4,
+  "title": "Лимиты: message_size_limit, max_inflight_messages, max_queued_messages",
+  "rows": [
+    {
+      "action": "payload 512 Б (лимит 1024)",
+      "expected": "доставлено",
+      "actual": "PUBACK Success, доставлены размеры [512]",
+      "pass": true
+    },
+    {
+      "action": "payload 2048 Б (больше лимита)",
+      "expected": "отброшено брокером",
+      "actual": "PUBACK reason 0x95, доставлены размеры [512]",
+      "pass": true
+    },
+    {
+      "action": "60 сообщений QoS 1 подписчику, который не шлёт PUBACK",
+      "expected": "получено ровно 20 (окно inflight)",
+      "actual": "получено 20",
+      "pass": true
+    },
+    {
+      "action": "300 сообщений офлайн-подписчику при max_queued_messages 100",
+      "expected": "доставлено ≈100, остальное отброшено",
+      "actual": "доставлено 100 (seq 0..99)",
+      "pass": true
+    },
+    {
+      "action": "метрика $SYS/broker/publish/messages/dropped",
+      "expected": "выросла на число отброшенных",
+      "actual": "0 -> 200 (+200)",
+      "pass": true
+    },
+    {
+      "action": "лог брокера",
+      "expected": "предупреждение об отбрасывании для клиента",
+      "actual": "2026-10-19T10:58:19: Outgoing messages are being dropped for client svc-ingest-queue.",
+      "pass": true
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "extra": {
+    "delivered_after_queue": 100,
+    "dropped_delta": 200,
+    "inflight_received": 20
+  }
+}
