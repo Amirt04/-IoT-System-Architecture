@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "iot/v1/telemetry",
+  "title": "Телеметрия узла мониторинга двигателя",
+  "type": "object",
+  "required": ["device_id", "ts", "seq", "metrics"],
+  "additionalProperties": false,
+  "properties": {
+    "device_id": {"type": "string", "pattern": "^dev-[0-9]{4,6}$"},
+    "ts":        {"type": "integer", "minimum": 1600000000000, "description": "время измерения, мс Unix"},
+    "seq":       {"type": "integer", "minimum": 0},
+    "fw":        {"type": "string", "maxLength": 16},
+    "metrics": {
+      "type": "object",
+      "required": ["temperature", "vibration_rms", "current"],
+      "additionalProperties": false,
+      "properties": {
+        "temperature":   {"type": "number", "minimum": -40, "maximum": 150},
+        "vibration_rms": {"type": "number", "minimum": 0, "maximum": 100},
+        "current":       {"type": "number", "minimum": 0, "maximum": 500},
+        "rpm":           {"type": "number", "minimum": 0, "maximum": 10000}
+      }
+    }
+  }
+}
