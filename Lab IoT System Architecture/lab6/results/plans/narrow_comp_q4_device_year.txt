@@ -1,0 +1,643 @@
+Custom Scan (ChunkAppend) on telemetry_narrow  (cost=6.96..77257.07 rows=2138000 width=16) (actual time=0.142..296.071 rows=525599 loops=1)
+  Order: telemetry_narrow.ts
+  Buffers: shared hit=21437
+  ->  Custom Scan (DecompressChunk) on _hyper_2_12_chunk  (cost=6.96..663.22 rows=19000 width=16) (actual time=0.141..2.506 rows=4585 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 14415
+        Buffers: shared hit=192
+        ->  Sort  (cost=6.94..6.99 rows=19 width=120) (actual time=0.041..0.055 rows=19 loops=1)
+              Sort Key: compress_hyper_7_195_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 27kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_195_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_195_chunk  (cost=0.27..6.54 rows=19 width=120) (actual time=0.021..0.024 rows=19 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_14_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.077..4.812 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.055 rows=41 loops=1)
+              Sort Key: compress_hyper_7_196_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_196_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_196_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_16_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.086..4.916 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.037..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_197_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_197_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_197_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_18_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.084..4.854 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.042..0.059 rows=41 loops=1)
+              Sort Key: compress_hyper_7_198_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_198_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_198_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.016..0.022 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_20_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.095..6.194 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.047..0.072 rows=41 loops=1)
+              Sort Key: compress_hyper_7_199_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_199_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_199_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.017..0.022 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_22_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.122..7.061 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.064..0.089 rows=41 loops=1)
+              Sort Key: compress_hyper_7_200_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_200_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_200_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.022..0.031 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_24_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.235..5.162 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.181..0.200 rows=41 loops=1)
+              Sort Key: compress_hyper_7_201_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_201_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_201_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.147..0.153 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_26_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.083..6.578 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.042..0.069 rows=41 loops=1)
+              Sort Key: compress_hyper_7_202_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_202_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_202_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.018..0.023 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_28_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.111..5.777 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.057..0.077 rows=41 loops=1)
+              Sort Key: compress_hyper_7_203_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_203_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_203_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.024..0.030 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_30_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.089..5.043 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.041..0.059 rows=41 loops=1)
+              Sort Key: compress_hyper_7_204_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_204_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_204_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.020..0.026 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_32_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.087..4.750 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.046..0.063 rows=41 loops=1)
+              Sort Key: compress_hyper_7_205_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_205_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_205_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.018..0.024 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_34_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.084..4.765 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.042..0.060 rows=41 loops=1)
+              Sort Key: compress_hyper_7_206_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_206_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_206_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_36_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.073..4.883 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.051 rows=41 loops=1)
+              Sort Key: compress_hyper_7_207_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_207_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_207_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_38_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.087..4.680 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.040..0.058 rows=41 loops=1)
+              Sort Key: compress_hyper_7_208_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_208_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_208_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.017..0.023 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_40_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.078..4.624 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_209_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_209_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_209_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_42_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.077..4.642 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.035..0.055 rows=41 loops=1)
+              Sort Key: compress_hyper_7_210_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_210_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_210_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_44_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.072..4.567 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.036..0.052 rows=41 loops=1)
+              Sort Key: compress_hyper_7_211_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_211_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_211_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_46_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.071..4.961 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.035..0.054 rows=41 loops=1)
+              Sort Key: compress_hyper_7_212_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_212_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_212_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.011..0.017 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_48_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.084..4.616 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.041..0.058 rows=41 loops=1)
+              Sort Key: compress_hyper_7_213_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_213_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_213_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.016..0.022 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_50_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.067..4.555 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.031..0.048 rows=41 loops=1)
+              Sort Key: compress_hyper_7_214_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_214_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_214_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_52_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.078..4.708 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.037..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_215_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_215_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_215_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_54_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.079..5.511 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.055 rows=41 loops=1)
+              Sort Key: compress_hyper_7_216_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_216_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_216_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_56_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.084..4.602 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.044..0.061 rows=41 loops=1)
+              Sort Key: compress_hyper_7_217_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_217_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_217_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.019..0.024 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_58_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.065..4.890 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.028..0.047 rows=41 loops=1)
+              Sort Key: compress_hyper_7_218_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_218_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_218_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.012..0.017 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_60_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.088..5.942 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.044..0.064 rows=41 loops=1)
+              Sort Key: compress_hyper_7_219_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_219_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_219_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.020..0.026 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_62_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.084..4.888 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.040..0.057 rows=41 loops=1)
+              Sort Key: compress_hyper_7_220_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_220_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_220_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_64_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.078..4.783 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.036..0.055 rows=41 loops=1)
+              Sort Key: compress_hyper_7_221_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_221_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_221_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_66_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.082..4.616 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.039..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_222_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_222_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_222_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.017..0.022 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_68_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.085..4.688 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.045..0.062 rows=41 loops=1)
+              Sort Key: compress_hyper_7_223_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_223_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_223_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.026..0.032 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_70_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.070..4.737 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.032..0.049 rows=41 loops=1)
+              Sort Key: compress_hyper_7_224_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_224_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_224_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.012..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_72_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.077..4.768 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.052 rows=41 loops=1)
+              Sort Key: compress_hyper_7_225_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_225_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_225_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_74_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.073..4.641 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.033..0.052 rows=41 loops=1)
+              Sort Key: compress_hyper_7_226_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_226_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_226_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_76_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.099..4.750 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.052..0.069 rows=41 loops=1)
+              Sort Key: compress_hyper_7_227_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_227_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_227_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.020..0.029 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_78_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.091..4.699 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.048..0.065 rows=41 loops=1)
+              Sort Key: compress_hyper_7_228_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_228_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_228_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.026..0.031 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_80_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.078..4.814 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.036..0.054 rows=41 loops=1)
+              Sort Key: compress_hyper_7_229_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_229_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_229_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_82_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.126..4.661 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.077..0.094 rows=41 loops=1)
+              Sort Key: compress_hyper_7_230_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_230_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_230_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.019..0.028 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_84_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.074..4.628 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.032..0.049 rows=41 loops=1)
+              Sort Key: compress_hyper_7_231_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_231_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_231_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.012..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_86_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.075..4.632 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.035..0.051 rows=41 loops=1)
+              Sort Key: compress_hyper_7_232_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_232_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_232_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.016..0.021 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_88_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.075..4.669 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_233_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_233_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_233_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_90_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.073..4.763 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.031..0.049 rows=41 loops=1)
+              Sort Key: compress_hyper_7_234_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_234_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_234_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_92_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.082..4.682 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.040..0.057 rows=41 loops=1)
+              Sort Key: compress_hyper_7_235_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_235_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_235_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.021 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_94_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.074..4.713 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.033..0.051 rows=41 loops=1)
+              Sort Key: compress_hyper_7_236_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_236_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_236_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.012..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_96_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.076..4.719 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.057 rows=41 loops=1)
+              Sort Key: compress_hyper_7_237_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_237_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_237_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.017..0.022 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_98_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.080..4.782 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.040..0.057 rows=41 loops=1)
+              Sort Key: compress_hyper_7_238_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_238_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_238_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_100_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.071..4.664 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.033..0.050 rows=41 loops=1)
+              Sort Key: compress_hyper_7_239_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_239_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_239_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_102_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.074..5.727 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.053 rows=41 loops=1)
+              Sort Key: compress_hyper_7_240_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_240_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_240_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_104_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.081..4.668 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.051 rows=41 loops=1)
+              Sort Key: compress_hyper_7_241_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_241_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_241_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.014..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_106_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.074..4.791 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.035..0.053 rows=41 loops=1)
+              Sort Key: compress_hyper_7_242_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_242_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_242_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.021 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_108_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.082..4.807 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.056 rows=41 loops=1)
+              Sort Key: compress_hyper_7_243_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_243_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_243_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.015..0.020 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_110_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.071..4.880 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.034..0.051 rows=41 loops=1)
+              Sort Key: compress_hyper_7_244_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_244_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_244_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.018 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_112_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.094..5.794 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.037..0.058 rows=41 loops=1)
+              Sort Key: compress_hyper_7_245_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_245_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_245_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.013..0.019 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_114_chunk  (cost=7.99..1482.77 rows=41000 width=16) (actual time=0.087..6.318 rows=10080 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 30240
+        Buffers: shared hit=411
+        ->  Sort  (cost=7.96..8.07 rows=41 width=120) (actual time=0.038..0.063 rows=41 loops=1)
+              Sort Key: compress_hyper_7_246_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 29kB
+              Buffers: shared hit=3
+              ->  Index Scan using compress_hyper_7_246_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_246_chunk  (cost=0.27..6.87 rows=41 width=120) (actual time=0.017..0.023 rows=41 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=3
+  ->  Custom Scan (DecompressChunk) on _hyper_2_116_chunk  (cost=5.31..972.45 rows=28000 width=16) (actual time=0.119..4.084 rows=6934 loops=1)
+        Filter: ((ts > '2025-11-02 19:34:00+00'::timestamp with time zone) AND (metric_id = 1))
+        Rows Removed by Filter: 20802
+        Buffers: shared hit=284
+        ->  Sort  (cost=5.29..5.36 rows=28 width=120) (actual time=0.053..0.075 rows=28 loops=1)
+              Sort Key: compress_hyper_7_247_chunk._ts_meta_min_1
+              Sort Method: quicksort  Memory: 28kB
+              Buffers: shared hit=4
+              ->  Index Scan using compress_hyper_7_247_chunk_device_id__ts_meta_min_1__ts_met_idx on compress_hyper_7_247_chunk  (cost=0.27..4.62 rows=28 width=120) (actual time=0.023..0.030 rows=28 loops=1)
+                    Index Cond: ((device_id = '3'::smallint) AND (_ts_meta_max_1 > '2025-11-02 19:34:00+00'::timestamp with time zone))
+                    Filter: ((_ts_meta_v2_min_metric_id <= 1) AND (_ts_meta_v2_max_metric_id >= 1))
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=1120
+Planning Time: 8.177 ms
+Execution Time: 317.453 ms

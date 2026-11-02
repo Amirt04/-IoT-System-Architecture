@@ -1,0 +1,2051 @@
+{
+ "load": {
+  "devices": 10,
+  "days": 400,
+  "start": "2025-09-28 19:34:00+00:00",
+  "end": "2026-11-02 19:34:00+00:00",
+  "gen_seconds": 40.2,
+  "anomaly_minutes": 11910,
+  "telemetry_wide": {
+   "table_mb": 889.4,
+   "index_mb": 377.7,
+   "toast_mb": 0.5,
+   "total_mb": 1267.5,
+   "chunks": 58,
+   "rows": 5760000,
+   "load_seconds": 43.9,
+   "rows_per_s": 131261,
+   "bytes_per_row": 230.7,
+   "hypertable_size_mb": 1267.5
+  },
+  "telemetry_narrow": {
+   "table_mb": 1162.5,
+   "index_mb": 1419.4,
+   "toast_mb": 0.0,
+   "total_mb": 2581.9,
+   "chunks": 58,
+   "rows": 23040000,
+   "load_seconds": 106.3,
+   "rows_per_s": 216727,
+   "bytes_per_row": 117.5,
+   "hypertable_size_mb": 2581.9
+  },
+  "chunks_raw": {
+   "telemetry_wide": [
+    [
+     "_timescaledb_internal._hyper_1_1_chunk",
+     "2025-09-25 00:00:00+00:00",
+     "2025-10-02 00:00:00+00:00",
+     10862592
+    ],
+    [
+     "_timescaledb_internal._hyper_1_2_chunk",
+     "2025-10-02 00:00:00+00:00",
+     "2025-10-09 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_5_chunk",
+     "2025-10-09 00:00:00+00:00",
+     "2025-10-16 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_7_chunk",
+     "2025-10-16 00:00:00+00:00",
+     "2025-10-23 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_9_chunk",
+     "2025-10-23 00:00:00+00:00",
+     "2025-10-30 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_11_chunk",
+     "2025-10-30 00:00:00+00:00",
+     "2025-11-06 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_13_chunk",
+     "2025-11-06 00:00:00+00:00",
+     "2025-11-13 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_15_chunk",
+     "2025-11-13 00:00:00+00:00",
+     "2025-11-20 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_17_chunk",
+     "2025-11-20 00:00:00+00:00",
+     "2025-11-27 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_19_chunk",
+     "2025-11-27 00:00:00+00:00",
+     "2025-12-04 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_21_chunk",
+     "2025-12-04 00:00:00+00:00",
+     "2025-12-11 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_23_chunk",
+     "2025-12-11 00:00:00+00:00",
+     "2025-12-18 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_25_chunk",
+     "2025-12-18 00:00:00+00:00",
+     "2025-12-25 00:00:00+00:00",
+     23027712
+    ],
+    [
+     "_timescaledb_internal._hyper_1_27_chunk",
+     "2025-12-25 00:00:00+00:00",
+     "2026-01-01 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_29_chunk",
+     "2026-01-01 00:00:00+00:00",
+     "2026-01-08 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_31_chunk",
+     "2026-01-08 00:00:00+00:00",
+     "2026-01-15 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_33_chunk",
+     "2026-01-15 00:00:00+00:00",
+     "2026-01-22 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_35_chunk",
+     "2026-01-22 00:00:00+00:00",
+     "2026-01-29 00:00:00+00:00",
+     23027712
+    ],
+    [
+     "_timescaledb_internal._hyper_1_37_chunk",
+     "2026-01-29 00:00:00+00:00",
+     "2026-02-05 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_39_chunk",
+     "2026-02-05 00:00:00+00:00",
+     "2026-02-12 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_41_chunk",
+     "2026-02-12 00:00:00+00:00",
+     "2026-02-19 00:00:00+00:00",
+     23093248
+    ],
+    [
+     "_timescaledb_internal._hyper_1_43_chunk",
+     "2026-02-19 00:00:00+00:00",
+     "2026-02-26 00:00:00+00:00",
+     23027712
+    ],
+    [
+     "_timescaledb_internal._hyper_1_45_chunk",
+     "2026-02-26 00:00:00+00:00",
+     "2026-03-05 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_47_chunk",
+     "2026-03-05 00:00:00+00:00",
+     "2026-03-12 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_49_chunk",
+     "2026-03-12 00:00:00+00:00",
+     "2026-03-19 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_51_chunk",
+     "2026-03-19 00:00:00+00:00",
+     "2026-03-26 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_53_chunk",
+     "2026-03-26 00:00:00+00:00",
+     "2026-04-02 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_55_chunk",
+     "2026-04-02 00:00:00+00:00",
+     "2026-04-09 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_57_chunk",
+     "2026-04-09 00:00:00+00:00",
+     "2026-04-16 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_59_chunk",
+     "2026-04-16 00:00:00+00:00",
+     "2026-04-23 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_61_chunk",
+     "2026-04-23 00:00:00+00:00",
+     "2026-04-30 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_63_chunk",
+     "2026-04-30 00:00:00+00:00",
+     "2026-05-07 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_65_chunk",
+     "2026-05-07 00:00:00+00:00",
+     "2026-05-14 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_67_chunk",
+     "2026-05-14 00:00:00+00:00",
+     "2026-05-21 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_69_chunk",
+     "2026-05-21 00:00:00+00:00",
+     "2026-05-28 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_71_chunk",
+     "2026-05-28 00:00:00+00:00",
+     "2026-06-04 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_73_chunk",
+     "2026-06-04 00:00:00+00:00",
+     "2026-06-11 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_75_chunk",
+     "2026-06-11 00:00:00+00:00",
+     "2026-06-18 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_77_chunk",
+     "2026-06-18 00:00:00+00:00",
+     "2026-06-25 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_79_chunk",
+     "2026-06-25 00:00:00+00:00",
+     "2026-07-02 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_81_chunk",
+     "2026-07-02 00:00:00+00:00",
+     "2026-07-09 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_83_chunk",
+     "2026-07-09 00:00:00+00:00",
+     "2026-07-16 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_85_chunk",
+     "2026-07-16 00:00:00+00:00",
+     "2026-07-23 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_87_chunk",
+     "2026-07-23 00:00:00+00:00",
+     "2026-07-30 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_89_chunk",
+     "2026-07-30 00:00:00+00:00",
+     "2026-08-06 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_91_chunk",
+     "2026-08-06 00:00:00+00:00",
+     "2026-08-13 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_93_chunk",
+     "2026-08-13 00:00:00+00:00",
+     "2026-08-20 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_95_chunk",
+     "2026-08-20 00:00:00+00:00",
+     "2026-08-27 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_97_chunk",
+     "2026-08-27 00:00:00+00:00",
+     "2026-09-03 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_99_chunk",
+     "2026-09-03 00:00:00+00:00",
+     "2026-09-10 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_101_chunk",
+     "2026-09-10 00:00:00+00:00",
+     "2026-09-17 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_103_chunk",
+     "2026-09-17 00:00:00+00:00",
+     "2026-09-24 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_105_chunk",
+     "2026-09-24 00:00:00+00:00",
+     "2026-10-01 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_107_chunk",
+     "2026-10-01 00:00:00+00:00",
+     "2026-10-08 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_109_chunk",
+     "2026-10-08 00:00:00+00:00",
+     "2026-10-15 00:00:00+00:00",
+     23289856
+    ],
+    [
+     "_timescaledb_internal._hyper_1_111_chunk",
+     "2026-10-15 00:00:00+00:00",
+     "2026-10-22 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_113_chunk",
+     "2026-10-22 00:00:00+00:00",
+     "2026-10-29 00:00:00+00:00",
+     23322624
+    ],
+    [
+     "_timescaledb_internal._hyper_1_115_chunk",
+     "2026-10-29 00:00:00+00:00",
+     "2026-11-05 00:00:00+00:00",
+     15892480
+    ]
+   ],
+   "telemetry_narrow": [
+    [
+     "_timescaledb_internal._hyper_2_3_chunk",
+     "2025-09-25 00:00:00+00:00",
+     "2025-10-02 00:00:00+00:00",
+     21610496
+    ],
+    [
+     "_timescaledb_internal._hyper_2_4_chunk",
+     "2025-10-02 00:00:00+00:00",
+     "2025-10-09 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_6_chunk",
+     "2025-10-09 00:00:00+00:00",
+     "2025-10-16 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_8_chunk",
+     "2025-10-16 00:00:00+00:00",
+     "2025-10-23 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_10_chunk",
+     "2025-10-23 00:00:00+00:00",
+     "2025-10-30 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_12_chunk",
+     "2025-10-30 00:00:00+00:00",
+     "2025-11-06 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_14_chunk",
+     "2025-11-06 00:00:00+00:00",
+     "2025-11-13 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_16_chunk",
+     "2025-11-13 00:00:00+00:00",
+     "2025-11-20 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_18_chunk",
+     "2025-11-20 00:00:00+00:00",
+     "2025-11-27 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_20_chunk",
+     "2025-11-27 00:00:00+00:00",
+     "2025-12-04 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_22_chunk",
+     "2025-12-04 00:00:00+00:00",
+     "2025-12-11 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_24_chunk",
+     "2025-12-11 00:00:00+00:00",
+     "2025-12-18 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_26_chunk",
+     "2025-12-18 00:00:00+00:00",
+     "2025-12-25 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_28_chunk",
+     "2025-12-25 00:00:00+00:00",
+     "2026-01-01 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_30_chunk",
+     "2026-01-01 00:00:00+00:00",
+     "2026-01-08 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_32_chunk",
+     "2026-01-08 00:00:00+00:00",
+     "2026-01-15 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_34_chunk",
+     "2026-01-15 00:00:00+00:00",
+     "2026-01-22 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_36_chunk",
+     "2026-01-22 00:00:00+00:00",
+     "2026-01-29 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_38_chunk",
+     "2026-01-29 00:00:00+00:00",
+     "2026-02-05 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_40_chunk",
+     "2026-02-05 00:00:00+00:00",
+     "2026-02-12 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_42_chunk",
+     "2026-02-12 00:00:00+00:00",
+     "2026-02-19 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_44_chunk",
+     "2026-02-19 00:00:00+00:00",
+     "2026-02-26 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_46_chunk",
+     "2026-02-26 00:00:00+00:00",
+     "2026-03-05 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_48_chunk",
+     "2026-03-05 00:00:00+00:00",
+     "2026-03-12 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_50_chunk",
+     "2026-03-12 00:00:00+00:00",
+     "2026-03-19 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_52_chunk",
+     "2026-03-19 00:00:00+00:00",
+     "2026-03-26 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_54_chunk",
+     "2026-03-26 00:00:00+00:00",
+     "2026-04-02 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_56_chunk",
+     "2026-04-02 00:00:00+00:00",
+     "2026-04-09 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_58_chunk",
+     "2026-04-09 00:00:00+00:00",
+     "2026-04-16 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_60_chunk",
+     "2026-04-16 00:00:00+00:00",
+     "2026-04-23 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_62_chunk",
+     "2026-04-23 00:00:00+00:00",
+     "2026-04-30 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_64_chunk",
+     "2026-04-30 00:00:00+00:00",
+     "2026-05-07 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_66_chunk",
+     "2026-05-07 00:00:00+00:00",
+     "2026-05-14 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_68_chunk",
+     "2026-05-14 00:00:00+00:00",
+     "2026-05-21 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_70_chunk",
+     "2026-05-21 00:00:00+00:00",
+     "2026-05-28 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_72_chunk",
+     "2026-05-28 00:00:00+00:00",
+     "2026-06-04 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_74_chunk",
+     "2026-06-04 00:00:00+00:00",
+     "2026-06-11 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_76_chunk",
+     "2026-06-11 00:00:00+00:00",
+     "2026-06-18 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_78_chunk",
+     "2026-06-18 00:00:00+00:00",
+     "2026-06-25 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_80_chunk",
+     "2026-06-25 00:00:00+00:00",
+     "2026-07-02 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_82_chunk",
+     "2026-07-02 00:00:00+00:00",
+     "2026-07-09 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_84_chunk",
+     "2026-07-09 00:00:00+00:00",
+     "2026-07-16 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_86_chunk",
+     "2026-07-16 00:00:00+00:00",
+     "2026-07-23 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_88_chunk",
+     "2026-07-23 00:00:00+00:00",
+     "2026-07-30 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_90_chunk",
+     "2026-07-30 00:00:00+00:00",
+     "2026-08-06 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_92_chunk",
+     "2026-08-06 00:00:00+00:00",
+     "2026-08-13 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_94_chunk",
+     "2026-08-13 00:00:00+00:00",
+     "2026-08-20 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_96_chunk",
+     "2026-08-20 00:00:00+00:00",
+     "2026-08-27 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_98_chunk",
+     "2026-08-27 00:00:00+00:00",
+     "2026-09-03 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_100_chunk",
+     "2026-09-03 00:00:00+00:00",
+     "2026-09-10 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_102_chunk",
+     "2026-09-10 00:00:00+00:00",
+     "2026-09-17 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_104_chunk",
+     "2026-09-17 00:00:00+00:00",
+     "2026-09-24 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_106_chunk",
+     "2026-09-24 00:00:00+00:00",
+     "2026-10-01 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_108_chunk",
+     "2026-10-01 00:00:00+00:00",
+     "2026-10-08 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_110_chunk",
+     "2026-10-08 00:00:00+00:00",
+     "2026-10-15 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_112_chunk",
+     "2026-10-15 00:00:00+00:00",
+     "2026-10-22 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_114_chunk",
+     "2026-10-22 00:00:00+00:00",
+     "2026-10-29 00:00:00+00:00",
+     47382528
+    ],
+    [
+     "_timescaledb_internal._hyper_2_116_chunk",
+     "2026-10-29 00:00:00+00:00",
+     "2026-11-05 00:00:00+00:00",
+     32284672
+    ]
+   ]
+  }
+ },
+ "bench_raw": {
+  "wide": {
+   "q1_last": {
+    "median_ms": 2.98,
+    "min_ms": 2.78,
+    "rows": 10,
+    "plan": [
+     "Planning Time: 1.860 ms",
+     "Execution Time: 0.789 ms"
+    ]
+   },
+   "q2_day_avg": {
+    "median_ms": 27.43,
+    "min_ms": 26.09,
+    "rows": 10,
+    "plan": [
+     "Planning Time: 0.290 ms",
+     "Execution Time: 25.859 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 150.5,
+    "min_ms": 134.94,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 0.620 ms",
+     "Execution Time: 170.671 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 1148.3,
+    "min_ms": 1041.08,
+    "rows": 525599,
+    "plan": [
+     "Planning Time: 3.610 ms",
+     "Execution Time: 435.740 ms"
+    ]
+   }
+  },
+  "narrow": {
+   "q1_last": {
+    "median_ms": 3.73,
+    "min_ms": 3.64,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 1.822 ms",
+     "Execution Time: 1.306 ms"
+    ]
+   },
+   "q2_day_avg": {
+    "median_ms": 19.6,
+    "min_ms": 18.08,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 0.309 ms",
+     "Execution Time: 21.776 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 86.03,
+    "min_ms": 67.55,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 0.544 ms",
+     "Execution Time: 70.653 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 841.42,
+    "min_ms": 760.75,
+    "rows": 525599,
+    "plan": [
+     "Planning Time: 3.772 ms",
+     "Execution Time: 119.786 ms"
+    ]
+   }
+  }
+ },
+ "cagg": {
+  "cagg_1m": {
+   "refresh_seconds": 21.6,
+   "rows": 1785600,
+   "size_mb": 216.2
+  },
+  "cagg_1h": {
+   "refresh_seconds": 10.0,
+   "rows": 384040,
+   "size_mb": 46.7
+  },
+  "cagg_1d": {
+   "refresh_seconds": 6.1,
+   "rows": 16040,
+   "size_mb": 2.5
+  },
+  "bench": {
+   "q2_day_avg": {
+    "median_ms": 0.7,
+    "min_ms": 0.59,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 0.207 ms",
+     "Execution Time: 0.059 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 141.97,
+    "min_ms": 131.99,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 0.350 ms",
+     "Execution Time: 124.584 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 31.53,
+    "min_ms": 26.34,
+    "rows": 8760,
+    "plan": [
+     "Planning Time: 1.242 ms",
+     "Execution Time: 23.178 ms"
+    ]
+   }
+  }
+ },
+ "compress": {
+  "telemetry_wide": {
+   "chunks": 58,
+   "compressed_chunks": 58,
+   "before_table": 889.4,
+   "before_index": 377.7,
+   "before_toast": 0.5,
+   "before_total": 1267.5,
+   "after_table": 2.7,
+   "after_index": 0.9,
+   "after_toast": 64.6,
+   "after_total": 68.2,
+   "ratio": 18.59,
+   "seconds": 16.1,
+   "segmentby": "device_id",
+   "orderby": "ts DESC",
+   "hypertable_size_mb": 69.6
+  },
+  "telemetry_narrow": {
+   "chunks": 58,
+   "compressed_chunks": 58,
+   "before_table": 1162.5,
+   "before_index": 1419.4,
+   "before_toast": 0.0,
+   "before_total": 2581.9,
+   "after_table": 5.4,
+   "after_index": 1.8,
+   "after_toast": 305.8,
+   "after_total": 313.0,
+   "ratio": 8.25,
+   "seconds": 17.1,
+   "segmentby": "device_id",
+   "orderby": "ts DESC",
+   "hypertable_size_mb": 313.9
+  },
+  "chunks_comp": {
+   "telemetry_wide": [
+    [
+     "_timescaledb_internal._hyper_1_101_chunk",
+     23289856,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_103_chunk",
+     23289856,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_105_chunk",
+     23289856,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_107_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_109_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_111_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_113_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_115_chunk",
+     15892480,
+     860160
+    ],
+    [
+     "_timescaledb_internal._hyper_1_11_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_13_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_15_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_17_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_19_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_1_chunk",
+     10862592,
+     679936
+    ],
+    [
+     "_timescaledb_internal._hyper_1_21_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_23_chunk",
+     23093248,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_25_chunk",
+     23027712,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_27_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_29_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_2_chunk",
+     23289856,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_31_chunk",
+     23093248,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_33_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_35_chunk",
+     23027712,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_37_chunk",
+     23093248,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_39_chunk",
+     23093248,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_41_chunk",
+     23093248,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_43_chunk",
+     23027712,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_45_chunk",
+     23322624,
+     1236992
+    ],
+    [
+     "_timescaledb_internal._hyper_1_47_chunk",
+     23322624,
+     1228800
+    ],
+    [
+     "_timescaledb_internal._hyper_1_49_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_51_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_53_chunk",
+     23322624,
+     1236992
+    ],
+    [
+     "_timescaledb_internal._hyper_1_55_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_57_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_59_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_5_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_61_chunk",
+     23289856,
+     1236992
+    ],
+    [
+     "_timescaledb_internal._hyper_1_63_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_65_chunk",
+     23289856,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_67_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_69_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_71_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_73_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_75_chunk",
+     23289856,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_77_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_79_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_7_chunk",
+     23289856,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_81_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_83_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_85_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_87_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_89_chunk",
+     23289856,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_91_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_93_chunk",
+     23289856,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_95_chunk",
+     23322624,
+     1261568
+    ],
+    [
+     "_timescaledb_internal._hyper_1_97_chunk",
+     23322624,
+     1245184
+    ],
+    [
+     "_timescaledb_internal._hyper_1_99_chunk",
+     23322624,
+     1253376
+    ],
+    [
+     "_timescaledb_internal._hyper_1_9_chunk",
+     23322624,
+     1261568
+    ]
+   ],
+   "telemetry_narrow": [
+    [
+     "_timescaledb_internal._hyper_2_100_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_102_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_104_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_106_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_108_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_10_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_110_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_112_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_114_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_116_chunk",
+     32284672,
+     3964928
+    ],
+    [
+     "_timescaledb_internal._hyper_2_12_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_14_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_16_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_18_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_20_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_22_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_24_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_26_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_28_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_30_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_32_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_34_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_36_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_38_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_3_chunk",
+     21610496,
+     2662400
+    ],
+    [
+     "_timescaledb_internal._hyper_2_40_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_42_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_44_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_46_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_48_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_4_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_50_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_52_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_54_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_56_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_58_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_60_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_62_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_64_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_66_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_68_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_6_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_70_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_72_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_74_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_76_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_78_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_80_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_82_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_84_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_86_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_88_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_8_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_90_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_92_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_94_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_96_chunk",
+     47382528,
+     5742592
+    ],
+    [
+     "_timescaledb_internal._hyper_2_98_chunk",
+     47382528,
+     5742592
+    ]
+   ]
+  }
+ },
+ "bench_comp": {
+  "wide": {
+   "q1_last": {
+    "median_ms": 10.27,
+    "min_ms": 9.46,
+    "rows": 10,
+    "plan": [
+     "Planning Time: 8.032 ms",
+     "Execution Time: 2.581 ms"
+    ]
+   },
+   "q2_day_avg": {
+    "median_ms": 23.96,
+    "min_ms": 23.07,
+    "rows": 10,
+    "plan": [
+     "Planning Time: 0.448 ms",
+     "Execution Time: 22.887 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 173.2,
+    "min_ms": 165.9,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 1.101 ms",
+     "Execution Time: 176.133 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 1151.35,
+    "min_ms": 1060.46,
+    "rows": 525599,
+    "plan": [
+     "Planning Time: 8.836 ms",
+     "Execution Time: 482.114 ms"
+    ]
+   }
+  },
+  "narrow": {
+   "q1_last": {
+    "median_ms": 15.9,
+    "min_ms": 13.55,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 8.589 ms",
+     "Execution Time: 4.849 ms"
+    ]
+   },
+   "q2_day_avg": {
+    "median_ms": 12.9,
+    "min_ms": 12.19,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 1.048 ms",
+     "Execution Time: 16.528 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 55.38,
+    "min_ms": 45.01,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 1.162 ms",
+     "Execution Time: 56.318 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 1041.11,
+    "min_ms": 1009.67,
+    "rows": 525599,
+    "plan": [
+     "Planning Time: 8.177 ms",
+     "Execution Time: 317.453 ms"
+    ]
+   }
+  }
+ },
+ "seg2": {
+  "chunks": 58,
+  "compressed_chunks": 58,
+  "before_table": 1165.8,
+  "before_index": 920.3,
+  "before_toast": 0.0,
+  "before_total": 2086.2,
+  "after_table": 16.1,
+  "after_index": 2.2,
+  "after_toast": 95.6,
+  "after_total": 113.9,
+  "ratio": 18.32,
+  "seconds": 27.8,
+  "segmentby": "device_id, metric_id",
+  "orderby": "ts DESC",
+  "hypertable_size_mb": 114.8,
+  "decompress_seconds": 76.5,
+  "bench": {
+   "q1_last": {
+    "median_ms": 13.11,
+    "min_ms": 12.62,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 9.021 ms",
+     "Execution Time: 3.618 ms"
+    ]
+   },
+   "q2_day_avg": {
+    "median_ms": 7.39,
+    "min_ms": 7.02,
+    "rows": 40,
+    "plan": [
+     "Planning Time: 0.419 ms",
+     "Execution Time: 10.138 ms"
+    ]
+   },
+   "q3_anomalies": {
+    "median_ms": 17.9,
+    "min_ms": 16.84,
+    "rows": 7,
+    "plan": [
+     "Planning Time: 1.175 ms",
+     "Execution Time: 15.482 ms"
+    ]
+   },
+   "q4_device_year": {
+    "median_ms": 840.85,
+    "min_ms": 733.58,
+    "rows": 525599,
+    "plan": [
+     "Planning Time: 15.282 ms",
+     "Execution Time: 135.580 ms"
+    ]
+   }
+  },
+  "chunks_comp": [
+   [
+    "_timescaledb_internal._hyper_2_100_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_102_chunk",
+    38281216,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_104_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_106_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_108_chunk",
+    38281216,
+    2072576
+   ],
+   [
+    "_timescaledb_internal._hyper_2_10_chunk",
+    38273024,
+    2105344
+   ],
+   [
+    "_timescaledb_internal._hyper_2_110_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_112_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_114_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_116_chunk",
+    26296320,
+    1417216
+   ],
+   [
+    "_timescaledb_internal._hyper_2_12_chunk",
+    38273024,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_14_chunk",
+    38273024,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_16_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_18_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_20_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_22_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_24_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_26_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_28_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_30_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_32_chunk",
+    38273024,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_34_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_36_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_38_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_3_chunk",
+    17694720,
+    1073152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_40_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_42_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_44_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_46_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_48_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_4_chunk",
+    38273024,
+    2129920
+   ],
+   [
+    "_timescaledb_internal._hyper_2_50_chunk",
+    38281216,
+    2072576
+   ],
+   [
+    "_timescaledb_internal._hyper_2_52_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_54_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_56_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_58_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_60_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_62_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_64_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_66_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_68_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_6_chunk",
+    38273024,
+    2105344
+   ],
+   [
+    "_timescaledb_internal._hyper_2_70_chunk",
+    38281216,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_72_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_74_chunk",
+    38281216,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_76_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_78_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_80_chunk",
+    38273024,
+    2097152
+   ],
+   [
+    "_timescaledb_internal._hyper_2_82_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_84_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_86_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_88_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_8_chunk",
+    38273024,
+    2113536
+   ],
+   [
+    "_timescaledb_internal._hyper_2_90_chunk",
+    38273024,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_92_chunk",
+    38273024,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_94_chunk",
+    38281216,
+    2080768
+   ],
+   [
+    "_timescaledb_internal._hyper_2_96_chunk",
+    38281216,
+    2088960
+   ],
+   [
+    "_timescaledb_internal._hyper_2_98_chunk",
+    38281216,
+    2088960
+   ]
+  ]
+ },
+ "cold": {
+  "bucket": "cold-tier",
+  "tables": {
+   "telemetry_wide": {
+    "from": "2025-09-25 00:00:00+00:00",
+    "to": "2025-10-30 00:00:00+00:00",
+    "chunks": 5,
+    "rows": 449060,
+    "pg_raw_mb": 99.3,
+    "pg_compressed_mb": 5.5,
+    "csv_mb": 17.8,
+    "parquet_snappy_mb": 2.5,
+    "parquet_zstd_mb": 1.6,
+    "uploaded_mb": 1.6,
+    "files": [
+     [
+      "telemetry_wide/year=2025/month=09/part-0.parquet",
+      31460,
+      122121
+     ],
+     [
+      "telemetry_wide/year=2025/month=10/part-0.parquet",
+      417600,
+      1585411
+     ]
+    ],
+    "seconds": 4.9,
+    "readback_rows": 31460,
+    "readback_ok": true
+   },
+   "telemetry_narrow": {
+    "from": "2025-09-25 00:00:00+00:00",
+    "to": "2025-10-30 00:00:00+00:00",
+    "chunks": 5,
+    "rows": 1796240,
+    "pg_raw_mb": 201.4,
+    "pg_compressed_mb": 9.1,
+    "csv_mb": 53.5,
+    "parquet_snappy_mb": 5.7,
+    "parquet_zstd_mb": 2.9,
+    "uploaded_mb": 2.8,
+    "files": [
+     [
+      "telemetry_narrow/year=2025/month=09/part-0.parquet",
+      125840,
+      159560
+     ],
+     [
+      "telemetry_narrow/year=2025/month=10/part-0.parquet",
+      1670400,
+      2791377
+     ]
+    ],
+    "seconds": 14.6,
+    "readback_rows": 125840,
+    "readback_ok": true
+   }
+  }
+ },
+ "retention": {
+  "telemetry_wide": {
+   "job_id": 1006,
+   "drop_after_days": 365,
+   "before": {
+    "chunks": 58,
+    "min_ts": "2025-09-28 19:34:00+00:00",
+    "size_mb": 69.6
+   },
+   "after": {
+    "chunks": 53,
+    "min_ts": "2025-10-30 00:00:00+00:00",
+    "size_mb": 64.0
+   },
+   "seconds": 0.03
+  },
+  "telemetry_narrow": {
+   "job_id": 1007,
+   "drop_after_days": 365,
+   "before": {
+    "chunks": 58,
+    "min_ts": "2025-09-28 19:34:00+00:00",
+    "size_mb": 114.8
+   },
+   "after": {
+    "chunks": 53,
+    "min_ts": "2025-10-30 00:00:00+00:00",
+    "size_mb": 105.7
+   },
+   "seconds": 0.02
+  },
+  "cagg_1d_min_bucket": "2025-09-28 00:00:00+00:00",
+  "cagg_1d_rows": 16040,
+  "jobs": [
+   [
+    1000,
+    "policy_refresh_continuous_aggregate",
+    "00:01:00",
+    "_materialized_hypertable_3"
+   ],
+   [
+    1001,
+    "policy_refresh_continuous_aggregate",
+    "00:30:00",
+    "_materialized_hypertable_4"
+   ],
+   [
+    1002,
+    "policy_refresh_continuous_aggregate",
+    "01:00:00",
+    "_materialized_hypertable_5"
+   ],
+   [
+    1003,
+    "policy_retention",
+    "1 day",
+    "_materialized_hypertable_3"
+   ],
+   [
+    1004,
+    "policy_compression",
+    "12:00:00",
+    "telemetry_wide"
+   ],
+   [
+    1005,
+    "policy_compression",
+    "12:00:00",
+    "telemetry_narrow"
+   ],
+   [
+    1006,
+    "policy_retention",
+    "1 day",
+    "telemetry_wide"
+   ],
+   [
+    1007,
+    "policy_retention",
+    "1 day",
+    "telemetry_narrow"
+   ]
+  ]
+ }
+}

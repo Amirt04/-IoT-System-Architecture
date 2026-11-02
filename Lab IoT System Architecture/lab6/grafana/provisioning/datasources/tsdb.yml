@@ -1,0 +1,17 @@
+apiVersion: 1
+datasources:
+  - name: TimescaleDB
+    uid: tsdb
+    type: grafana-postgresql-datasource
+    access: proxy
+    url: timescaledb:5432
+    user: grafana
+    database: iot
+    isDefault: true
+    jsonData:
+      database: iot
+      sslmode: disable
+      postgresVersion: 1600
+      timescaledb: true
+    secureJsonData:
+      password: grafana

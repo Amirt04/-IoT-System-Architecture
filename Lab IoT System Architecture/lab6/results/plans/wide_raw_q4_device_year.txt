@@ -1,0 +1,168 @@
+Result  (cost=0.42..119285.23 rows=526114 width=16) (actual time=0.027..416.689 rows=525599 loops=1)
+  Buffers: shared hit=17583
+  ->  Custom Scan (ChunkAppend) on telemetry_wide  (cost=0.42..110078.23 rows=526114 width=119) (actual time=0.021..114.987 rows=525599 loops=1)
+        Order: telemetry_wide.ts
+        Buffers: shared hit=17583
+        ->  Index Scan Backward using _hyper_1_11_chunk_telemetry_wide_dev_ts on _hyper_1_11_chunk  (cost=0.42..1925.92 rows=4629 width=119) (actual time=0.020..0.699 rows=4585 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=155
+        ->  Index Scan Backward using _hyper_1_13_chunk_telemetry_wide_dev_ts on _hyper_1_13_chunk  (cost=0.42..2106.49 rows=10137 width=119) (actual time=0.019..1.654 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_15_chunk_telemetry_wide_dev_ts on _hyper_1_15_chunk  (cost=0.42..2097.42 rows=9872 width=119) (actual time=0.033..1.501 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_17_chunk_telemetry_wide_dev_ts on _hyper_1_17_chunk  (cost=0.42..2103.27 rows=10107 width=119) (actual time=0.021..1.498 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_19_chunk_telemetry_wide_dev_ts on _hyper_1_19_chunk  (cost=0.42..2077.97 rows=9999 width=119) (actual time=0.033..1.446 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_21_chunk_telemetry_wide_dev_ts on _hyper_1_21_chunk  (cost=0.42..2074.80 rows=10090 width=119) (actual time=0.021..1.644 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_23_chunk_telemetry_wide_dev_ts on _hyper_1_23_chunk  (cost=0.42..2079.92 rows=10110 width=119) (actual time=0.032..1.516 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_25_chunk_telemetry_wide_dev_ts on _hyper_1_25_chunk  (cost=0.42..2065.08 rows=10060 width=119) (actual time=0.019..1.643 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_27_chunk_telemetry_wide_dev_ts on _hyper_1_27_chunk  (cost=0.42..2077.59 rows=9956 width=119) (actual time=0.023..1.500 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_29_chunk_telemetry_wide_dev_ts on _hyper_1_29_chunk  (cost=0.42..2079.78 rows=10009 width=119) (actual time=0.019..1.405 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_31_chunk_telemetry_wide_dev_ts on _hyper_1_31_chunk  (cost=0.42..2074.79 rows=10050 width=119) (actual time=0.018..1.442 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_33_chunk_telemetry_wide_dev_ts on _hyper_1_33_chunk  (cost=0.42..2079.64 rows=10104 width=119) (actual time=0.071..1.492 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_35_chunk_telemetry_wide_dev_ts on _hyper_1_35_chunk  (cost=0.42..2059.50 rows=10003 width=119) (actual time=0.016..1.425 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_37_chunk_telemetry_wide_dev_ts on _hyper_1_37_chunk  (cost=0.42..2075.97 rows=9959 width=119) (actual time=0.016..1.447 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_39_chunk_telemetry_wide_dev_ts on _hyper_1_39_chunk  (cost=0.42..2083.97 rows=10255 width=119) (actual time=0.016..1.453 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_41_chunk_telemetry_wide_dev_ts on _hyper_1_41_chunk  (cost=0.42..2079.41 rows=9962 width=119) (actual time=0.016..1.450 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_43_chunk_telemetry_wide_dev_ts on _hyper_1_43_chunk  (cost=0.42..2068.32 rows=10211 width=119) (actual time=0.015..1.472 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_45_chunk_telemetry_wide_dev_ts on _hyper_1_45_chunk  (cost=0.42..2109.03 rows=10127 width=119) (actual time=0.034..1.498 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_47_chunk_telemetry_wide_dev_ts on _hyper_1_47_chunk  (cost=0.42..2106.65 rows=9976 width=119) (actual time=0.021..1.587 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_49_chunk_telemetry_wide_dev_ts on _hyper_1_49_chunk  (cost=0.42..2094.62 rows=9845 width=119) (actual time=0.038..1.496 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_51_chunk_telemetry_wide_dev_ts on _hyper_1_51_chunk  (cost=0.42..2091.27 rows=9865 width=119) (actual time=0.017..1.457 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_53_chunk_telemetry_wide_dev_ts on _hyper_1_53_chunk  (cost=0.42..2099.08 rows=10403 width=119) (actual time=0.028..1.766 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_55_chunk_telemetry_wide_dev_ts on _hyper_1_55_chunk  (cost=0.42..2111.06 rows=10278 width=119) (actual time=0.021..1.893 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_57_chunk_telemetry_wide_dev_ts on _hyper_1_57_chunk  (cost=0.42..2092.97 rows=9993 width=119) (actual time=0.035..1.530 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_59_chunk_telemetry_wide_dev_ts on _hyper_1_59_chunk  (cost=0.42..2101.81 rows=10204 width=119) (actual time=0.019..1.449 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_61_chunk_telemetry_wide_dev_ts on _hyper_1_61_chunk  (cost=0.42..2106.99 rows=10308 width=119) (actual time=0.019..1.468 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_63_chunk_telemetry_wide_dev_ts on _hyper_1_63_chunk  (cost=0.42..2104.35 rows=10272 width=119) (actual time=0.024..1.456 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_65_chunk_telemetry_wide_dev_ts on _hyper_1_65_chunk  (cost=0.42..2105.19 rows=10305 width=119) (actual time=0.015..1.496 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_67_chunk_telemetry_wide_dev_ts on _hyper_1_67_chunk  (cost=0.42..2105.71 rows=10258 width=119) (actual time=0.039..1.510 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_69_chunk_telemetry_wide_dev_ts on _hyper_1_69_chunk  (cost=0.42..2110.13 rows=10288 width=119) (actual time=0.018..1.580 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_71_chunk_telemetry_wide_dev_ts on _hyper_1_71_chunk  (cost=0.42..2099.13 rows=10208 width=119) (actual time=0.020..1.651 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_73_chunk_telemetry_wide_dev_ts on _hyper_1_73_chunk  (cost=0.42..2109.97 rows=10161 width=119) (actual time=0.015..1.481 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_75_chunk_telemetry_wide_dev_ts on _hyper_1_75_chunk  (cost=0.42..2102.58 rows=10053 width=119) (actual time=0.015..1.481 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_77_chunk_telemetry_wide_dev_ts on _hyper_1_77_chunk  (cost=0.42..2108.47 rows=10154 width=119) (actual time=0.014..1.469 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_79_chunk_telemetry_wide_dev_ts on _hyper_1_79_chunk  (cost=0.42..2106.47 rows=10090 width=119) (actual time=0.013..1.463 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_81_chunk_telemetry_wide_dev_ts on _hyper_1_81_chunk  (cost=0.42..2106.55 rows=9885 width=119) (actual time=0.012..1.485 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_83_chunk_telemetry_wide_dev_ts on _hyper_1_83_chunk  (cost=0.42..2106.18 rows=9979 width=119) (actual time=0.021..1.495 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_85_chunk_telemetry_wide_dev_ts on _hyper_1_85_chunk  (cost=0.42..2100.87 rows=10033 width=119) (actual time=0.022..1.857 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_87_chunk_telemetry_wide_dev_ts on _hyper_1_87_chunk  (cost=0.42..2097.12 rows=9956 width=119) (actual time=0.023..1.460 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_89_chunk_telemetry_wide_dev_ts on _hyper_1_89_chunk  (cost=0.42..2107.04 rows=10140 width=119) (actual time=0.017..1.455 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_91_chunk_telemetry_wide_dev_ts on _hyper_1_91_chunk  (cost=0.42..2106.14 rows=10308 width=119) (actual time=0.030..1.491 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_93_chunk_telemetry_wide_dev_ts on _hyper_1_93_chunk  (cost=0.42..2090.59 rows=9751 width=119) (actual time=0.016..1.445 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_95_chunk_telemetry_wide_dev_ts on _hyper_1_95_chunk  (cost=0.42..2099.69 rows=10140 width=119) (actual time=0.015..1.457 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_97_chunk_telemetry_wide_dev_ts on _hyper_1_97_chunk  (cost=0.42..2111.07 rows=10319 width=119) (actual time=0.018..1.890 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_99_chunk_telemetry_wide_dev_ts on _hyper_1_99_chunk  (cost=0.42..2111.31 rows=10053 width=119) (actual time=0.040..1.487 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_101_chunk_telemetry_wide_dev_ts on _hyper_1_101_chunk  (cost=0.42..2096.89 rows=10130 width=119) (actual time=0.019..1.513 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_103_chunk_telemetry_wide_dev_ts on _hyper_1_103_chunk  (cost=0.42..2094.57 rows=10134 width=119) (actual time=0.023..1.834 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_105_chunk_telemetry_wide_dev_ts on _hyper_1_105_chunk  (cost=0.42..2098.40 rows=10258 width=119) (actual time=0.024..1.703 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_107_chunk_telemetry_wide_dev_ts on _hyper_1_107_chunk  (cost=0.42..2090.11 rows=9912 width=119) (actual time=0.040..1.833 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_109_chunk_telemetry_wide_dev_ts on _hyper_1_109_chunk  (cost=0.42..2102.96 rows=9999 width=119) (actual time=0.021..1.485 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=338
+        ->  Index Scan Backward using _hyper_1_111_chunk_telemetry_wide_dev_ts on _hyper_1_111_chunk  (cost=0.42..2091.55 rows=9875 width=119) (actual time=0.023..2.160 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_113_chunk_telemetry_wide_dev_ts on _hyper_1_113_chunk  (cost=0.42..2106.94 rows=10134 width=119) (actual time=0.027..1.497 rows=10080 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=337
+        ->  Index Scan Backward using _hyper_1_115_chunk_telemetry_wide_dev_ts on _hyper_1_115_chunk  (cost=0.42..1284.92 rows=6807 width=119) (actual time=0.028..1.015 rows=6934 loops=1)
+              Index Cond: ((device_id = '3'::smallint) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+              Buffers: shared hit=232
+Planning:
+  Buffers: shared hit=692
+Planning Time: 3.610 ms
+Execution Time: 435.740 ms

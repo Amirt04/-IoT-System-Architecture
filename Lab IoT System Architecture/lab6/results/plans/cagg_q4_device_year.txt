@@ -1,0 +1,37 @@
+Custom Scan (ChunkAppend) on _materialized_hypertable_4  (cost=0.29..5115.25 rows=8845 width=16) (actual time=0.045..22.610 rows=8760 loops=1)
+  Order: _materialized_hypertable_4.bucket
+  Buffers: shared hit=35094
+  ->  Index Scan Backward using _hyper_4_118_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_118_chunk  (cost=0.29..867.96 rows=1089 width=16) (actual time=0.044..3.242 rows=1084 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 3252
+        Buffers: shared hit=4330
+  ->  Index Scan Backward using _hyper_4_122_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_122_chunk  (cost=0.29..927.04 rows=1655 width=16) (actual time=0.070..3.359 rows=1680 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 5040
+        Buffers: shared hit=6729
+  ->  Index Scan Backward using _hyper_4_120_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_120_chunk  (cost=0.29..926.22 rows=1670 width=16) (actual time=0.072..4.801 rows=1680 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 5040
+        Buffers: shared hit=6737
+  ->  Index Scan Backward using _hyper_4_123_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_123_chunk  (cost=0.29..929.44 rows=1716 width=16) (actual time=0.090..3.951 rows=1680 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 5040
+        Buffers: shared hit=6741
+  ->  Index Scan Backward using _hyper_4_121_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_121_chunk  (cost=0.29..935.14 rows=1755 width=16) (actual time=0.083..4.817 rows=1680 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 5040
+        Buffers: shared hit=6727
+  ->  Index Scan Backward using _hyper_4_124_chunk__materialized_hypertable_4_device_id_bucket_ on _hyper_4_124_chunk  (cost=0.29..529.45 rows=960 width=16) (actual time=0.070..1.493 rows=956 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (bucket > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Filter: (metric_id = 1)
+        Rows Removed by Filter: 2868
+        Buffers: shared hit=3830
+Planning:
+  Buffers: shared hit=82
+Planning Time: 1.242 ms
+Execution Time: 23.178 ms

@@ -1,0 +1,76 @@
+Finalize HashAggregate  (cost=6556.94..6556.99 rows=5 width=36) (actual time=173.647..175.871 rows=7 loops=1)
+  Group Key: _hyper_1_107_chunk.device_id
+  Batches: 1  Memory Usage: 24kB
+  Buffers: shared hit=1921
+  ->  Gather  (cost=1822.81..6556.62 rows=25 width=36) (actual time=68.594..175.842 rows=7 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=1921
+        ->  Parallel Append  (cost=822.81..5554.12 rows=25 width=36) (actual time=75.388..160.839 rows=4 loops=2)
+              Buffers: shared hit=1921
+              ->  Partial HashAggregate  (cost=822.81..822.86 rows=5 width=36) (actual time=35.647..35.649 rows=0 loops=1)
+                    Group Key: _hyper_1_107_chunk.device_id
+                    Buffers: shared hit=331
+                    Worker 0:  Batches: 1  Memory Usage: 24kB
+                    ->  Custom Scan (DecompressChunk) on _hyper_1_107_chunk  (cost=0.07..2.81 rows=41000 width=123) (actual time=35.644..35.645 rows=0 loops=1)
+                          Filter: (((payload ->> 'vibration_rms'::text))::double precision > '7.1'::double precision)
+                          Rows Removed by Filter: 70000
+                          Vectorized Filter: (ts > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                          Buffers: shared hit=331
+                          ->  Parallel Seq Scan on compress_hyper_6_185_chunk  (cost=0.00..2.81 rows=41 width=88) (actual time=0.007..0.051 rows=70 loops=1)
+                                Filter: (_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                                Rows Removed by Filter: 40
+                                Buffers: shared hit=2
+              ->  Partial HashAggregate  (cost=822.51..822.56 rows=5 width=36) (actual time=47.251..47.253 rows=1 loops=1)
+                    Group Key: _hyper_1_115_chunk.device_id
+                    Buffers: shared hit=243
+                    Worker 0:  Batches: 1  Memory Usage: 24kB
+                    ->  Custom Scan (DecompressChunk) on _hyper_1_115_chunk  (cost=0.06..2.51 rows=41000 width=123) (actual time=11.456..47.212 rows=27 loops=1)
+                          Filter: (((payload ->> 'vibration_rms'::text))::double precision > '7.1'::double precision)
+                          Rows Removed by Filter: 69313
+                          Vectorized Filter: (ts > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                          Buffers: shared hit=243
+                          ->  Parallel Seq Scan on compress_hyper_6_189_chunk  (cost=0.00..2.51 rows=41 width=88) (actual time=0.007..0.060 rows=70 loops=1)
+                                Filter: (_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                                Buffers: shared hit=2
+              ->  Partial HashAggregate  (cost=1302.81..1302.86 rows=5 width=36) (actual time=41.463..41.464 rows=2 loops=2)
+                    Group Key: _hyper_1_109_chunk.device_id
+                    Batches: 1  Memory Usage: 24kB
+                    Buffers: shared hit=464
+                    Worker 0:  Batches: 1  Memory Usage: 24kB
+                    ->  Custom Scan (DecompressChunk) on _hyper_1_109_chunk  (cost=0.04..2.81 rows=65000 width=123) (actual time=19.692..41.310 rows=180 loops=2)
+                          Filter: (((payload ->> 'vibration_rms'::text))::double precision > '7.1'::double precision)
+                          Rows Removed by Filter: 50220
+                          Vectorized Filter: (ts > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                          Buffers: shared hit=464
+                          ->  Parallel Seq Scan on compress_hyper_6_186_chunk  (cost=0.00..2.81 rows=65 width=88) (actual time=0.011..0.492 rows=55 loops=2)
+                                Filter: (_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                                Buffers: shared hit=2
+              ->  Partial HashAggregate  (cost=1302.81..1302.86 rows=5 width=36) (actual time=87.950..87.952 rows=2 loops=1)
+                    Group Key: _hyper_1_111_chunk.device_id
+                    Batches: 1  Memory Usage: 24kB
+                    Buffers: shared hit=443
+                    ->  Custom Scan (DecompressChunk) on _hyper_1_111_chunk  (cost=0.04..2.81 rows=65000 width=123) (actual time=47.215..87.634 rows=299 loops=1)
+                          Filter: (((payload ->> 'vibration_rms'::text))::double precision > '7.1'::double precision)
+                          Rows Removed by Filter: 100501
+                          Vectorized Filter: (ts > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                          Buffers: shared hit=443
+                          ->  Parallel Seq Scan on compress_hyper_6_187_chunk  (cost=0.00..2.81 rows=65 width=88) (actual time=0.005..0.180 rows=110 loops=1)
+                                Filter: (_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                                Buffers: shared hit=2
+              ->  Partial HashAggregate  (cost=1302.81..1302.86 rows=5 width=36) (actual time=67.874..67.876 rows=1 loops=1)
+                    Group Key: _hyper_1_113_chunk.device_id
+                    Batches: 1  Memory Usage: 24kB
+                    Buffers: shared hit=440
+                    ->  Custom Scan (DecompressChunk) on _hyper_1_113_chunk  (cost=0.04..2.81 rows=65000 width=123) (actual time=5.778..67.835 rows=38 loops=1)
+                          Filter: (((payload ->> 'vibration_rms'::text))::double precision > '7.1'::double precision)
+                          Rows Removed by Filter: 100762
+                          Vectorized Filter: (ts > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                          Buffers: shared hit=440
+                          ->  Parallel Seq Scan on compress_hyper_6_188_chunk  (cost=0.00..2.81 rows=65 width=88) (actual time=0.006..0.080 rows=110 loops=1)
+                                Filter: (_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone)
+                                Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=111
+Planning Time: 1.101 ms
+Execution Time: 176.133 ms

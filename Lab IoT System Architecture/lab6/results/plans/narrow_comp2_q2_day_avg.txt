@@ -1,0 +1,14 @@
+GroupAggregate  (cost=0.19..792.15 rows=1 width=14) (actual time=0.347..10.062 rows=40 loops=1)
+  Group Key: _hyper_2_116_chunk.device_id, _hyper_2_116_chunk.metric_id
+  Buffers: shared hit=278
+  ->  Custom Scan (DecompressChunk) on _hyper_2_116_chunk  (cost=0.19..19.63 rows=103000 width=14) (actual time=0.066..5.407 rows=57600 loops=1)
+        Vectorized Filter: ((ts >= '2026-11-01 00:00:00+00'::timestamp with time zone) AND (ts < '2026-11-02 00:00:00+00'::timestamp with time zone))
+        Rows Removed by Filter: 22400
+        Buffers: shared hit=278
+        ->  Index Scan using compress_hyper_7_305_chunk_device_id_metric_id__ts_meta_min_idx on compress_hyper_7_305_chunk  (cost=0.27..19.63 rows=103 width=90) (actual time=0.013..0.068 rows=80 loops=1)
+              Index Cond: ((_ts_meta_min_1 < '2026-11-02 00:00:00+00'::timestamp with time zone) AND (_ts_meta_max_1 >= '2026-11-01 00:00:00+00'::timestamp with time zone))
+              Buffers: shared hit=13
+Planning:
+  Buffers: shared hit=29
+Planning Time: 0.419 ms
+Execution Time: 10.138 ms

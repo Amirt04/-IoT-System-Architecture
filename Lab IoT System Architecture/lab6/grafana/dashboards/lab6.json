@@ -1,0 +1,319 @@
+{
+ "uid": "lab6",
+ "title": "Lab 6 — телеметрия двигателей (TimescaleDB)",
+ "timezone": "browser",
+ "schemaVersion": 39,
+ "version": 1,
+ "editable": true,
+ "refresh": "1m",
+ "time": {
+  "from": "now-30d",
+  "to": "now"
+ },
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Температура обмотки, °C (средняя за час, cagg_1h)",
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 0
+   },
+   "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "tsdb"
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "grafana-postgresql-datasource",
+      "uid": "tsdb"
+     },
+     "editorMode": "code",
+     "rawQuery": true,
+     "format": "time_series",
+     "rawSql": "SELECT bucket AS \"time\", 'M-' || lpad(device_id::text, 3, '0') AS metric, avg_value AS value\nFROM cagg_1h\nWHERE metric_id = 1 AND $__timeFilter(bucket)\nORDER BY 1"
+    }
+   ],
+   "fieldConfig": {
+    "defaults": {
+     "unit": "celsius",
+     "custom": {
+      "lineWidth": 1,
+      "fillOpacity": 0,
+      "showPoints": "never"
+     }
+    },
+    "overrides": []
+   },
+   "options": {
+    "legend": {
+     "displayMode": "list",
+     "placement": "bottom"
+    },
+    "tooltip": {
+     "mode": "multi"
+    }
+   }
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "Вибрация СКЗ, мм/с (максимум за час) и порог 7,1 мм/с",
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 0
+   },
+   "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "tsdb"
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "grafana-postgresql-datasource",
+      "uid": "tsdb"
+     },
+     "editorMode": "code",
+     "rawQuery": true,
+     "format": "time_series",
+     "rawSql": "SELECT bucket AS \"time\", 'M-' || lpad(device_id::text, 3, '0') AS metric, max_value AS value\nFROM cagg_1h\nWHERE metric_id = 2 AND $__timeFilter(bucket)\nORDER BY 1"
+    }
+   ],
+   "fieldConfig": {
+    "defaults": {
+     "unit": "none",
+     "decimals": 1,
+     "custom": {
+      "lineWidth": 1,
+      "fillOpacity": 0,
+      "showPoints": "never",
+      "thresholdsStyle": {
+       "mode": "line+area"
+      }
+     },
+     "thresholds": {
+      "mode": "absolute",
+      "steps": [
+       {
+        "color": "transparent",
+        "value": null
+       },
+       {
+        "color": "red",
+        "value": 7.1
+       }
+      ]
+     }
+    },
+    "overrides": []
+   },
+   "options": {
+    "legend": {
+     "displayMode": "list",
+     "placement": "bottom"
+    },
+    "tooltip": {
+     "mode": "multi"
+    }
+   }
+  },
+  {
+   "id": 3,
+   "type": "table",
+   "title": "Последние значения по двигателям (telemetry_narrow, LATERAL … LIMIT 1)",
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 9
+   },
+   "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "tsdb"
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "grafana-postgresql-datasource",
+      "uid": "tsdb"
+     },
+     "editorMode": "code",
+     "rawQuery": true,
+     "format": "table",
+     "rawSql": "SELECT d.name AS \"Двигатель\", d.model AS \"Модель\", d.site AS \"Площадка\", max(l.ts) AS \"Время\",\n  max(l.value) FILTER (WHERE m.metric_id = 1) AS \"T, °C\",\n  max(l.value) FILTER (WHERE m.metric_id = 2) AS \"Вибрация, мм/с\",\n  max(l.value) FILTER (WHERE m.metric_id = 3) AS \"Ток, А\",\n  max(l.value) FILTER (WHERE m.metric_id = 4) AS \"об/мин\"\nFROM devices d CROSS JOIN metrics m\nCROSS JOIN LATERAL (SELECT ts, value FROM telemetry_narrow t\n                    WHERE t.device_id = d.device_id AND t.metric_id = m.metric_id\n                    ORDER BY ts DESC LIMIT 1) l\nGROUP BY d.device_id, d.name, d.model, d.site ORDER BY d.device_id"
+    }
+   ],
+   "fieldConfig": {
+    "defaults": {
+     "custom": {
+      "align": "auto"
+     }
+    },
+    "overrides": [
+     {
+      "matcher": {
+       "id": "byName",
+       "options": "Вибрация, мм/с"
+      },
+      "properties": [
+       {
+        "id": "custom.cellOptions",
+        "value": {
+         "type": "color-background"
+        }
+       },
+       {
+        "id": "thresholds",
+        "value": {
+         "mode": "absolute",
+         "steps": [
+          {
+           "color": "green",
+           "value": null
+          },
+          {
+           "color": "orange",
+           "value": 4.5
+          },
+          {
+           "color": "red",
+           "value": 7.1
+          }
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "options": {
+    "showHeader": true
+   }
+  },
+  {
+   "id": 4,
+   "type": "bargauge",
+   "title": "Аномалии вибрации (> 7,1 мм/с) за 30 дней, минут (cagg_1m)",
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 9
+   },
+   "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "tsdb"
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "grafana-postgresql-datasource",
+      "uid": "tsdb"
+     },
+     "editorMode": "code",
+     "rawQuery": true,
+     "format": "table",
+     "rawSql": "SELECT 'M-' || lpad(device_id::text, 3, '0') AS \"Двигатель\", count(*) AS \"минут\"\nFROM cagg_1m\nWHERE metric_id = 2 AND max_value > 7.1 AND bucket > now() - interval '30 days'\nGROUP BY device_id ORDER BY device_id"
+    }
+   ],
+   "fieldConfig": {
+    "defaults": {
+     "unit": "none",
+     "min": 0,
+     "color": {
+      "mode": "thresholds"
+     },
+     "thresholds": {
+      "mode": "absolute",
+      "steps": [
+       {
+        "color": "green",
+        "value": null
+       },
+       {
+        "color": "orange",
+        "value": 60
+       },
+       {
+        "color": "red",
+        "value": 240
+       }
+      ]
+     }
+    },
+    "overrides": []
+   },
+   "options": {
+    "orientation": "horizontal",
+    "displayMode": "gradient",
+    "showUnfilled": true,
+    "reduceOptions": {
+     "values": true,
+     "calcs": [],
+     "fields": ""
+    }
+   }
+  },
+  {
+   "id": 5,
+   "type": "table",
+   "title": "Объём хранения (hypertable_size)",
+   "gridPos": {
+    "h": 7,
+    "w": 24,
+    "x": 0,
+    "y": 18
+   },
+   "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "tsdb"
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "grafana-postgresql-datasource",
+      "uid": "tsdb"
+     },
+     "editorMode": "code",
+     "rawQuery": true,
+     "format": "table",
+     "rawSql": "SELECT h.hypertable_name AS \"Таблица\", hypertable_size(format('%I.%I', h.hypertable_schema, h.hypertable_name)::regclass) AS \"Размер\",\n       (SELECT count(*) FROM show_chunks(format('%I.%I', h.hypertable_schema, h.hypertable_name)::regclass)) AS \"Чанков\",\n       h.compression_enabled AS \"Сжатие\"\nFROM timescaledb_information.hypertables h\nUNION ALL\nSELECT 'агрегат ' || view_name, hypertable_size(format('%I.%I', materialization_hypertable_schema, materialization_hypertable_name)::regclass), NULL, NULL\nFROM timescaledb_information.continuous_aggregates\nORDER BY 1"
+    }
+   ],
+   "fieldConfig": {
+    "defaults": {},
+    "overrides": [
+     {
+      "matcher": {
+       "id": "byName",
+       "options": "Размер"
+      },
+      "properties": [
+       {
+        "id": "unit",
+        "value": "bytes"
+       }
+      ]
+     }
+    ]
+   },
+   "options": {
+    "showHeader": true
+   }
+  }
+ ],
+ "tags": [
+  "lab6",
+  "timescaledb"
+ ]
+}
