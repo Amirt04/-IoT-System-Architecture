@@ -1,0 +1,26 @@
+Finalize GroupAggregate  (cost=30306.89..30334.39 rows=200 width=36) (actual time=120.614..124.521 rows=7 loops=1)
+  Group Key: _hyper_3_117_chunk.device_id
+  Buffers: shared hit=432396
+  ->  Gather Merge  (cost=30306.89..30329.89 rows=200 width=36) (actual time=120.605..124.509 rows=13 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=432396
+        ->  Sort  (cost=29306.88..29307.38 rows=200 width=36) (actual time=117.004..117.006 rows=6 loops=2)
+              Sort Key: _hyper_3_117_chunk.device_id
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=432396
+              Worker 0:  Sort Method: quicksort  Memory: 25kB
+              ->  Partial HashAggregate  (cost=29297.23..29299.23 rows=200 width=36) (actual time=116.974..116.977 rows=6 loops=2)
+                    Group Key: _hyper_3_117_chunk.device_id
+                    Batches: 1  Memory Usage: 40kB
+                    Buffers: shared hit=432389
+                    Worker 0:  Batches: 1  Memory Usage: 40kB
+                    ->  Parallel Index Scan using _hyper_3_117_chunk__materialized_hypertable_3_metric_id_bucket_ on _hyper_3_117_chunk  (cost=0.43..27912.20 rows=110803 width=20) (actual time=17.893..116.861 rows=362 loops=2)
+                          Index Cond: ((metric_id = 2) AND (bucket > '2026-10-03 19:34:00+00'::timestamp with time zone))
+                          Filter: (max_value > '7.1'::double precision)
+                          Rows Removed by Filter: 215632
+                          Buffers: shared hit=432389
+Planning:
+  Buffers: shared hit=16
+Planning Time: 0.350 ms
+Execution Time: 124.584 ms

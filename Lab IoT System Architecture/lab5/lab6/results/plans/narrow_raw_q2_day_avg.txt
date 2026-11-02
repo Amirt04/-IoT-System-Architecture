@@ -1,0 +1,11 @@
+HashAggregate  (cost=3222.58..3223.08 rows=40 width=14) (actual time=21.737..21.742 rows=40 loops=1)
+  Group Key: _hyper_2_116_chunk.device_id, _hyper_2_116_chunk.metric_id
+  Batches: 1  Memory Usage: 24kB
+  Buffers: shared hit=57662
+  ->  Index Scan using _hyper_2_116_chunk_telemetry_narrow_ts_idx on _hyper_2_116_chunk  (cost=0.30..2781.67 rows=58787 width=14) (actual time=0.013..13.717 rows=57600 loops=1)
+        Index Cond: ((ts >= '2026-11-01 00:00:00+00'::timestamp with time zone) AND (ts < '2026-11-02 00:00:00+00'::timestamp with time zone))
+        Buffers: shared hit=57662
+Planning:
+  Buffers: shared hit=17
+Planning Time: 0.309 ms
+Execution Time: 21.776 ms

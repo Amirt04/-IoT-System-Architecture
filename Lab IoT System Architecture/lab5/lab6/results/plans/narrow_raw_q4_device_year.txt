@@ -1,0 +1,166 @@
+Custom Scan (ChunkAppend) on telemetry_narrow  (cost=0.42..138757.08 rows=528975 width=16) (actual time=0.021..101.334 rows=525599 loops=1)
+  Order: telemetry_narrow.ts
+  Buffers: shared hit=10848
+  ->  Index Scan Backward using _hyper_2_12_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_12_chunk  (cost=0.42..2343.30 rows=4622 width=16) (actual time=0.020..0.704 rows=4585 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=96
+  ->  Index Scan Backward using _hyper_2_14_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_14_chunk  (cost=0.42..2641.76 rows=10272 width=16) (actual time=0.019..1.271 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_16_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_16_chunk  (cost=0.42..2642.62 rows=10214 width=16) (actual time=0.047..1.386 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_18_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_18_chunk  (cost=0.42..2643.37 rows=10224 width=16) (actual time=0.019..1.188 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_20_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_20_chunk  (cost=0.42..2635.86 rows=10051 width=16) (actual time=0.013..1.376 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_22_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_22_chunk  (cost=0.42..2648.14 rows=10226 width=16) (actual time=0.029..1.364 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_24_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_24_chunk  (cost=0.42..2631.16 rows=9886 width=16) (actual time=0.039..1.267 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_26_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_26_chunk  (cost=0.42..2644.24 rows=9820 width=16) (actual time=0.019..1.253 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_28_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_28_chunk  (cost=0.42..2643.43 rows=9951 width=16) (actual time=0.017..1.199 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_30_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_30_chunk  (cost=0.42..2653.61 rows=10116 width=16) (actual time=0.018..1.212 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_32_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_32_chunk  (cost=0.42..2628.33 rows=10022 width=16) (actual time=0.015..1.196 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_34_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_34_chunk  (cost=0.42..2632.86 rows=10205 width=16) (actual time=0.013..1.413 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_36_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_36_chunk  (cost=0.42..2637.87 rows=10048 width=16) (actual time=0.024..1.212 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_38_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_38_chunk  (cost=0.42..2618.87 rows=9865 width=16) (actual time=0.014..1.217 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_40_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_40_chunk  (cost=0.42..2651.41 rows=10408 width=16) (actual time=0.015..1.201 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_42_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_42_chunk  (cost=0.42..2656.44 rows=10067 width=16) (actual time=0.014..1.187 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_44_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_44_chunk  (cost=0.42..2648.68 rows=10429 width=16) (actual time=0.013..1.173 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_46_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_46_chunk  (cost=0.42..2644.98 rows=10196 width=16) (actual time=0.016..1.182 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_48_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_48_chunk  (cost=0.42..2621.05 rows=10001 width=16) (actual time=0.014..1.395 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_50_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_50_chunk  (cost=0.42..2658.38 rows=10245 width=16) (actual time=0.050..1.349 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_52_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_52_chunk  (cost=0.42..2643.10 rows=10405 width=16) (actual time=0.025..1.239 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_54_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_54_chunk  (cost=0.42..2659.68 rows=10511 width=16) (actual time=0.019..1.197 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_56_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_56_chunk  (cost=0.42..2645.41 rows=10123 width=16) (actual time=0.016..1.191 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_58_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_58_chunk  (cost=0.42..2640.94 rows=10048 width=16) (actual time=0.014..1.186 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_60_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_60_chunk  (cost=0.42..2647.29 rows=10283 width=16) (actual time=0.015..1.268 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_62_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_62_chunk  (cost=0.42..2650.35 rows=10267 width=16) (actual time=0.018..2.041 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_64_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_64_chunk  (cost=0.42..2648.40 rows=10093 width=16) (actual time=0.021..1.812 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_66_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_66_chunk  (cost=0.42..2646.58 rows=10299 width=16) (actual time=0.024..1.214 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_68_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_68_chunk  (cost=0.42..2644.60 rows=9999 width=16) (actual time=0.017..1.260 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_70_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_70_chunk  (cost=0.42..2645.05 rows=9969 width=16) (actual time=0.016..1.226 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_72_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_72_chunk  (cost=0.42..2643.63 rows=9979 width=16) (actual time=0.025..1.222 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_74_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_74_chunk  (cost=0.42..2641.95 rows=10038 width=16) (actual time=0.015..1.215 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_76_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_76_chunk  (cost=0.42..2644.98 rows=10165 width=16) (actual time=0.013..1.197 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_78_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_78_chunk  (cost=0.42..2636.65 rows=9849 width=16) (actual time=0.012..1.197 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_80_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_80_chunk  (cost=0.42..2660.84 rows=10304 width=16) (actual time=0.011..1.214 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_82_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_82_chunk  (cost=0.42..2652.00 rows=10175 width=16) (actual time=0.012..1.426 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_84_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_84_chunk  (cost=0.42..2638.34 rows=10079 width=16) (actual time=0.015..1.192 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_86_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_86_chunk  (cost=0.42..2649.20 rows=10126 width=16) (actual time=0.013..1.270 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_88_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_88_chunk  (cost=0.42..2642.04 rows=9881 width=16) (actual time=0.014..1.401 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_90_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_90_chunk  (cost=0.42..2638.78 rows=10275 width=16) (actual time=0.026..1.258 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_92_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_92_chunk  (cost=0.42..2637.27 rows=10404 width=16) (actual time=0.013..1.180 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_94_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_94_chunk  (cost=0.42..2636.82 rows=10128 width=16) (actual time=0.012..1.191 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_96_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_96_chunk  (cost=0.42..2656.32 rows=10257 width=16) (actual time=0.016..1.218 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_98_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_98_chunk  (cost=0.42..2636.71 rows=9989 width=16) (actual time=0.014..1.187 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_100_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_100_chunk  (cost=0.42..2625.49 rows=10185 width=16) (actual time=0.017..1.186 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_102_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_102_chunk  (cost=0.42..2656.60 rows=10314 width=16) (actual time=0.013..1.786 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_104_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_104_chunk  (cost=0.42..2657.25 rows=10572 width=16) (actual time=0.017..1.230 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_106_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_106_chunk  (cost=0.42..2635.03 rows=10232 width=16) (actual time=0.024..1.188 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_108_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_108_chunk  (cost=0.42..2639.71 rows=10122 width=16) (actual time=0.013..1.175 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_110_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_110_chunk  (cost=0.42..2635.58 rows=9964 width=16) (actual time=0.013..1.187 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_112_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_112_chunk  (cost=0.42..2642.60 rows=10058 width=16) (actual time=0.013..1.253 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_114_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_114_chunk  (cost=0.42..2652.49 rows=10142 width=16) (actual time=0.016..1.408 rows=10080 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=208
+  ->  Index Scan Backward using _hyper_2_116_chunk_telemetry_narrow_dev_metric_ts on _hyper_2_116_chunk  (cost=0.42..1599.01 rows=6872 width=16) (actual time=0.019..1.226 rows=6934 loops=1)
+        Index Cond: ((device_id = '3'::smallint) AND (metric_id = 1) AND (ts > '2025-11-02 19:34:00+00'::timestamp with time zone))
+        Buffers: shared hit=144
+Planning:
+  Buffers: shared hit=692
+Planning Time: 3.772 ms
+Execution Time: 119.786 ms

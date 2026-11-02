@@ -1,0 +1,11 @@
+Bitmap Heap Scan on _hyper_5_130_chunk  (cost=1.44..8.79 rows=8 width=14) (actual time=0.015..0.027 rows=40 loops=1)
+  Recheck Cond: (bucket = '2026-11-01 00:00:00+00'::timestamp with time zone)
+  Heap Blocks: exact=16
+  Buffers: shared hit=18
+  ->  Bitmap Index Scan on _hyper_5_130_chunk__materialized_hypertable_5_bucket_idx  (cost=0.00..1.44 rows=8 width=0) (actual time=0.011..0.011 rows=40 loops=1)
+        Index Cond: (bucket = '2026-11-01 00:00:00+00'::timestamp with time zone)
+        Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=16
+Planning Time: 0.207 ms
+Execution Time: 0.059 ms

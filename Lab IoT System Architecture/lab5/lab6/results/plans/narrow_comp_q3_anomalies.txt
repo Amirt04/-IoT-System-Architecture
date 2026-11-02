@@ -1,0 +1,55 @@
+Finalize HashAggregate  (cost=13996.45..13996.50 rows=5 width=36) (actual time=54.037..56.041 rows=7 loops=1)
+  Group Key: _hyper_2_108_chunk.device_id
+  Batches: 1  Memory Usage: 24kB
+  Buffers: shared hit=17697
+  ->  Gather  (cost=2849.72..13996.14 rows=25 width=36) (actual time=4.630..56.002 rows=12 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=17697
+        ->  Parallel Append  (cost=1849.72..12993.64 rows=25 width=36) (actual time=11.703..44.746 rows=6 loops=2)
+              Buffers: shared hit=17697
+              ->  Custom Scan (VectorAgg)  (cost=1849.72..1849.77 rows=5 width=36) (actual time=12.043..12.045 rows=0 loops=1)
+                    Buffers: shared hit=2564
+                    ->  Custom Scan (DecompressChunk) on _hyper_2_108_chunk  (cost=0.08..12.22 rows=147000 width=20) (never executed)
+                          Vectorized Filter: ((ts > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (value > '7.1'::double precision) AND (metric_id = 2))
+                          Rows Removed by Filter: 0
+                          ->  Parallel Seq Scan on compress_hyper_7_243_chunk  (cost=0.00..12.22 rows=147 width=120) (actual time=0.011..0.223 rows=250 loops=1)
+                                Filter: ((_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (_ts_meta_v2_min_metric_id <= 2) AND (_ts_meta_v2_max_metric_id >= 2))
+                                Rows Removed by Filter: 160
+                                Buffers: shared hit=8
+              ->  Custom Scan (VectorAgg)  (cost=3024.72..3024.77 rows=5 width=36) (actual time=7.514..20.496 rows=5 loops=1)
+                    Buffers: shared hit=4120
+                    ->  Custom Scan (DecompressChunk) on _hyper_2_110_chunk  (cost=0.05..12.22 rows=241000 width=20) (actual time=0.000..0.001 rows=361 loops=1)
+                          Vectorized Filter: ((ts > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (value > '7.1'::double precision) AND (metric_id = 2))
+                          Rows Removed by Filter: 402839
+                          ->  Parallel Seq Scan on compress_hyper_7_244_chunk  (cost=0.00..12.22 rows=241 width=120) (actual time=0.013..0.350 rows=410 loops=1)
+                                Filter: ((_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (_ts_meta_v2_min_metric_id <= 2) AND (_ts_meta_v2_max_metric_id >= 2))
+                                Buffers: shared hit=8
+              ->  Custom Scan (VectorAgg)  (cost=3024.72..3024.77 rows=5 width=36) (actual time=7.032..11.376 rows=2 loops=2)
+                    Buffers: shared hit=4121
+                    ->  Custom Scan (DecompressChunk) on _hyper_2_112_chunk  (cost=0.05..12.22 rows=241000 width=20) (actual time=0.000..0.001 rows=299 loops=1)
+                          Vectorized Filter: ((ts > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (value > '7.1'::double precision) AND (metric_id = 2))
+                          Rows Removed by Filter: 402901
+                          ->  Parallel Seq Scan on compress_hyper_7_245_chunk  (cost=0.00..12.22 rows=241 width=120) (actual time=0.008..0.158 rows=205 loops=2)
+                                Filter: ((_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (_ts_meta_v2_min_metric_id <= 2) AND (_ts_meta_v2_max_metric_id >= 2))
+                                Buffers: shared hit=8
+              ->  Custom Scan (VectorAgg)  (cost=3024.72..3024.77 rows=5 width=36) (actual time=2.690..20.007 rows=1 loops=1)
+                    Buffers: shared hit=4088
+                    ->  Custom Scan (DecompressChunk) on _hyper_2_114_chunk  (cost=0.05..12.22 rows=241000 width=20) (actual time=0.000..0.001 rows=38 loops=1)
+                          Vectorized Filter: ((ts > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (value > '7.1'::double precision) AND (metric_id = 2))
+                          Rows Removed by Filter: 403162
+                          ->  Parallel Seq Scan on compress_hyper_7_246_chunk  (cost=0.00..12.22 rows=241 width=120) (actual time=0.006..0.300 rows=410 loops=1)
+                                Filter: ((_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (_ts_meta_v2_min_metric_id <= 2) AND (_ts_meta_v2_max_metric_id >= 2))
+                                Buffers: shared hit=8
+              ->  Custom Scan (VectorAgg)  (cost=2069.38..2069.43 rows=5 width=36) (actual time=3.847..14.173 rows=1 loops=1)
+                    Buffers: shared hit=2804
+                    ->  Custom Scan (DecompressChunk) on _hyper_2_116_chunk  (cost=0.04..6.88 rows=165000 width=20) (actual time=0.000..0.001 rows=27 loops=1)
+                          Vectorized Filter: ((ts > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (value > '7.1'::double precision) AND (metric_id = 2))
+                          Rows Removed by Filter: 277333
+                          ->  Parallel Seq Scan on compress_hyper_7_247_chunk  (cost=0.00..6.88 rows=165 width=120) (actual time=0.006..0.208 rows=280 loops=1)
+                                Filter: ((_ts_meta_max_1 > '2026-10-03 19:34:00+00'::timestamp with time zone) AND (_ts_meta_v2_min_metric_id <= 2) AND (_ts_meta_v2_max_metric_id >= 2))
+                                Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=111
+Planning Time: 1.162 ms
+Execution Time: 56.318 ms
